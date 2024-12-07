@@ -19,7 +19,7 @@ body {
     display: flex;
     width: 100%;
     position: relative;
-    overflow: auto;
+    overflow: hidden;
 }
 
 /* Sidebar */
