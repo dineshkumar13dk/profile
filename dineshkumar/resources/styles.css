@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Arial', sans-serif;
     color: #fff;
@@ -182,16 +183,30 @@ body {
 /* Projects Section */
 .projects {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    /* Allow wrapping to multiple lines */
     justify-content: space-between;
-    margin: 0 auto;
-    padding: 2rem;
-    max-width: 900px;
     gap: 2rem;
+    /* Add space between project boxes */
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+.projects h2 {
+    text-align: center;
+    color: #fdb827;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    /* Space below the heading */
+    width: 100%;
+    /* Full width */
+}
+
+/* Project Card */
 .projects .project {
-    flex: 1;
+    flex: 0 0 48%;
+    /* Allow each project to take up 48% of the container width */
     padding: 1rem;
     background-color: #1a1a3a;
     border-radius: 10px;
@@ -218,6 +233,46 @@ body {
 .projects .project a:hover {
     text-decoration: underline;
 }
+
+/* Project Link Hover Tooltip */
+.projects .project a {
+    color: #fdb827;
+    text-decoration: none;
+    position: relative;
+    /* Needed for positioning the tooltip */
+}
+
+.projects .project a:hover {
+    text-decoration: underline;
+}
+
+/* Tooltip message */
+.projects .project a::after {
+    content: "Click to know more!";
+    /* Tooltip text */
+    position: absolute;
+    bottom: -25px;
+    /* Positioning the tooltip below the link */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fdb827;
+    color: #1a1a3a;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    opacity: 0;
+    /* Initially hidden */
+    pointer-events: none;
+    /* Disable interaction with the tooltip */
+    transition: opacity 0.3s ease;
+}
+
+/* Show tooltip on hover */
+.projects .project a:hover::after {
+    opacity: 1;
+    /* Tooltip appears when link is hovered */
+}
+
 
 /* Contact Section */
 .contact {
