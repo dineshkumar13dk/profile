@@ -152,45 +152,62 @@ body {
 
 /* About Section */
 .about {
-    text-align: center;
+    margin: 2rem auto; /* Center the section vertically */
+    text-align: left; /* Align text to the left for better readability */
     width: 90%;
     max-width: 800px;
     padding: 2rem;
     background-color: #1a1a3a;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: #fff;
 }
 
 /* Heading */
 .about h2 {
     font-size: 2.5rem;
     color: #fdb827;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center; /* Center the heading */
 }
 
-/* Section Titles */
-.about h4 {
-    font-size: 1.5rem;
+/* Section Subheadings */
+.about h3 {
+    font-size: 1.8rem;
     color: #fdb827;
+    margin-top: 1.5rem;
     margin-bottom: 1rem;
-    text-align: left;
+    border-bottom: 2px solid #fdb827; /* Add a separator below headings */
+    display: inline-block;
+    padding-bottom: 0.5rem;
 }
 
-/* Education and Skills */
+/* Paragraph Styling */
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* Education and Skills Lists */
 .about ul {
-    list-style: none;
-    padding: 0;
-    text-align: left;
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0; /* Align content with the section */
 }
 
 .about li {
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
 }
 
-.about li span {
-    font-weight: bold;
-    color: #fdb827;
+.about li strong {
+    color: #fdb827; /* Highlight key terms */
+}
+
+/* Contact Details (Optional styling for better visibility) */
+.about p strong {
+    color: #fdb827; /* Highlight key labels */
 }
 
 /* Contact Information */
