@@ -153,112 +153,98 @@ body {
 /* About Section */
 .about {
     text-align: left;
-    max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
+    max-width: 900px;
 }
 
 .about h2 {
     color: #fdb827;
     margin-bottom: 1rem;
-    text-align: center;
+    font-size: 2rem;
 }
 
-.about p {
+.about p,
+.about ul {
+    font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 1rem;
 }
 
-.about .education {
-    margin-top: 2rem;
+.about ul {
+    padding-left: 20px;
 }
 
-.about .education table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-}
-
-.about .education table th,
-.about .education table td {
-    border: 1px solid #fdb827;
-    padding: 8px;
-    text-align: center;
-}
-
-.about .education table th {
-    background-color: #1a1a3a;
-    color: #fdb827;
+.about ul li {
+    margin-bottom: 0.5rem;
 }
 
 /* Projects Section */
 .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    width: 100%;
-    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin: 0 auto;
     padding: 2rem;
+    max-width: 900px;
+    gap: 2rem;
 }
 
-.project-card {
-    background: #1a1a3a;
-    padding: 1.5rem;
-    border-radius: 8px;
-    transition: transform 0.3s, box-shadow 0.3s;
+.projects .project {
+    flex: 1;
+    padding: 1rem;
+    background-color: #1a1a3a;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-}
-
-.project-card h3 {
+.projects .project h3 {
     color: #fdb827;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.projects .project p {
+    font-size: 1rem;
+    line-height: 1.5;
     margin-bottom: 0.5rem;
 }
 
-.project-card p {
-    line-height: 1.6;
+.projects .project a {
+    color: #fdb827;
+    text-decoration: none;
+}
+
+.projects .project a:hover {
+    text-decoration: underline;
 }
 
 /* Contact Section */
 .contact {
-    text-align: left;
-    max-width: 800px;
+    text-align: center;
     margin: 0 auto;
     padding: 2rem;
+    max-width: 600px;
 }
 
 .contact h2 {
     color: #fdb827;
     margin-bottom: 1rem;
-    text-align: center;
+    font-size: 2rem;
 }
 
-.contact .info {
+.contact p {
+    font-size: 1.2rem;
+    line-height: 1.8;
     margin-bottom: 1rem;
 }
 
-.contact .info p {
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-}
-
-.contact .social-links {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.contact .social-links a {
-    font-size: 1.5rem;
-    color: #fff;
-    transition: color 0.3s;
-}
-
-.contact .social-links a:hover {
+.contact a {
     color: #fdb827;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact a:hover {
+    text-decoration: underline;
 }
