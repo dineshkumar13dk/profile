@@ -98,12 +98,3 @@ section {
 .project-list a:hover {
     text-decoration: underline;
 }
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 1rem 0;
-    background: #333;
-    color: white;
-    margin-top: 2rem;
-}
