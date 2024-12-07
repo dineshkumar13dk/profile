@@ -19,7 +19,6 @@ body {
     display: flex;
     width: 100%;
     position: relative;
-    overflow: hidden;
 }
 
 /* Sidebar */
@@ -36,8 +35,6 @@ body {
     bottom: 0;
     transform: translateX(0);
     transition: transform 0.3s ease;
-    overflow-y: hidden;
-    /* Allow sidebar content to scroll if it overflows */
 }
 
 .sidebar.closed {
@@ -109,12 +106,14 @@ body {
     flex: 1;
     margin-left: 300px;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     padding: 2rem;
     transition: margin-left 0.3s ease;
-    overflow-y: hidden;
-    /* Allow scrolling if content overflows */
+}
+
+.main-content.expanded {
+    margin-left: 0;
 }
 
 /* Last Updated Footer */
@@ -174,8 +173,6 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     color: #fff;
-    overflow-y: hidden;
-    /* Allow scrolling if content overflows */
 }
 
 /* Heading */
@@ -218,24 +215,39 @@ body {
 
 .about li strong {
     color: #fdb827;
+    /* Highlight important text */
 }
 
 /* Contact Details */
 .about p strong {
     color: #fdb827;
+    /* Highlight labels */
+}
+
+/* Contact Information */
+.contact-info {
+    font-size: 1.2rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-info span {
+    font-weight: bold;
 }
 
 /* Projects Section */
 .projects {
     display: flex;
     flex-wrap: wrap;
+    /* Allow wrapping to multiple lines */
     justify-content: space-between;
     gap: 2rem;
+    /* Add space between project boxes */
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    overflow-y: hidden;
-    /* Allow scrolling if content overflows */
 }
 
 .projects h2 {
@@ -243,18 +255,19 @@ body {
     color: #fdb827;
     font-size: 2rem;
     margin-bottom: 2rem;
+    /* Space below the heading */
     width: 100%;
+    /* Full width */
 }
 
 /* Project Card */
 .projects .project {
     flex: 0 0 48%;
+    /* Allow each project to take up 48% of the container width */
     padding: 1rem;
     background-color: #1a1a3a;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    /* Ensure content inside does not overflow the card */
 }
 
 .projects .project h3 {
@@ -277,6 +290,7 @@ body {
 .projects .project a:hover {
     text-decoration: underline;
 }
+
 
 /* Contact Section */
 .contact {
