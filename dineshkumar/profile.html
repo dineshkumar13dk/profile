@@ -1,1 +1,29 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Edit Profile</h1>
+    </header>
+    <main class="container">
+        <form id="profile-form" class="profile-form">
+            <label for="profile-photo">Profile Photo:</label>
+            <input type="file" id="profile-photo" accept="image/*">
+            
+            <label for="user-name">Name:</label>
+            <input type="text" id="user-name" placeholder="Enter your name">
+            
+            <label for="user-skills">Skills (comma-separated):</label>
+            <input type="text" id="user-skills" placeholder="e.g., Java, HTML, CSS">
+            
+            <button type="submit" class="btn">Save Changes</button>
+        </form>
+    </main>
+    <script src="assets/js/profile.js"></script>
+</body>
+</html>
