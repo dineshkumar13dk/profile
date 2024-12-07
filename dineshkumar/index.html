@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dinesh Kumar</title>
-    <link rel="stylesheet" href="/resources/styles.css">
+    <link rel="stylesheet" href="resources/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -12,13 +12,13 @@
         <!-- Sidebar -->
         <aside class="sidebar" id="sidebar">
             <div class="logo">
-                <h1 th:text="${user.name}">Dinesh</h1>
+                <h1>Dinesh</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="/about"><i class="fas fa-user"></i>About</a></li>
-                <li><a href="/projects"><i class="fas fa-briefcase"></i>Projects</a></li>
-                <li><a href="/contact"><i class="fas fa-envelope"></i>Contact</a></li>
+                <li><a href="index"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="resources/templates/about"><i class="fas fa-user"></i>About</a></li>
+                <li><a href="resources/templates/projects"><i class="fas fa-briefcase"></i>Projects</a></li>
+                <li><a href="resources/templates/contact"><i class="fas fa-envelope"></i>Contact</a></li>
             </ul>
         </aside>
 
@@ -31,25 +31,26 @@
         <main class="main-content">
             <section id="home" class="home">
                 <div class="profile">
-                    <img th:src="@{/images/dinesh.png}" alt="Profile Photo">
+                    <img src="resources/dinesh.png" alt="Profile Photo">
                 </div>
                 <div class="info">
-                    <p th:text="'I’m ' + ${user.name}">I’m Dinesh</p>
-                    <h1 th:text="${user.profession}">Website Developer</h1>
-                    <p th:text="${user.description}">
+                    <p>I’m Dinesh</p>
+                    <h1>Website Developer</h1>
+                    <p>
                         I am a web and software developer with expertise in Java, Spring Boot, and modern web technologies.
+                        I love creating solutions that make an impact and excel in both front-end and back-end development.
                     </p>
                     <div class="social-links">
-                        <a th:href="${user.social.facebook}" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a th:href="${user.social.twitter}" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a th:href="${user.social.linkedin}" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a th:href="${user.social.github}" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </section>
         </main>
     </div>
 
-    <script src="/resources/script.js"></script>
+    <script src="resources/script.js"></script>
 </body>
 </html>
