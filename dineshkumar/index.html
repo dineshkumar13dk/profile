@@ -3,66 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile - Dinesh Kumar</title>
-    <link rel="stylesheet" href="resources/styles.css">
+    <title>Dinesh Kumar</title>
+    <link rel="stylesheet" href="resources/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <header class="dashboard-header">
-        <div class="header-content">
-            <img src="resources/dinesh.jpeg" alt="Your Photo" class="profile-photo">
-            <h1>S Dinesh Kumar</h1>
-            <p>Java Developer | Spring Boot Enthusiast | Web Developer</p>
-        </div>
-    </header>
-
-    <nav class="dashboard-nav">
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <main class="dashboard-content">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I'm dinesh, a Java Developer with 2 years of experience in building web applications using Core Java, Spring Boot, and modern web technologies. I love solving real-world problems and am enthusiastic about continuous learning.
-            </p>
-        </section>
-
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-container">
-                <div class="skill">Java</div>
-                <div class="skill">Spring Boot</div>
-                <div class="skill">HTML</div>
-                <div class="skill">CSS</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">MySQL</div>
-                <div class="skill">RESTful APIs</div>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>Dinesh</h1>
             </div>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul class="project-list">
-                <li>
-                    <h3><a href="https://github.com/dineshkumar13dk/chatbot" target="_blank">Project 1</a></h3>
-                    <p>A Java-based RESTful API for managing tasks. Technologies: Java, Spring Boot, MySQL.</p>
-                </li>
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
+                <li><a href="#projects"><i class="fas fa-briefcase"></i> Projects</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
-        </section>
+            <div class="back-button">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+        </aside>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>If you'd like to connect, feel free to reach out:</p>
-            <ul>
-                <li>Email: dineshkumarnavarasam@gamil.com</li>
-                <li>GitHub: <a href="https://github.com/dineshkumar13dk/chatbot" target="_blank">github.com/dineshkumar13dk</a></li>
-            </ul>
-        </section>
-    </main>
+        <!-- Main Content -->
+        <main class="main-content">
+            <section id="home" class="home">
+                <div class="profile">
+                    <img src="resources/dinesh.jpeg" alt="Profile Photo">
+                </div>
+                <div class="info">
+                    <p>I’m Dinesh</p>
+                    <h1>Website Developer</h1>
+                    <p>
+                        I am a web and software developer with expertise in Java, Spring Boot, and modern web technologies.
+                        I love creating solutions that make an impact and excel in both front-end and back-end development.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
