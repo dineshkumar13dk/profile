@@ -155,11 +155,13 @@ body {
     text-align: left;
     max-width: 800px;
     margin: 0 auto;
+    padding: 2rem;
 }
 
 .about h2 {
     color: #fdb827;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .about p {
@@ -167,19 +169,42 @@ body {
     margin-bottom: 1rem;
 }
 
+.about .education {
+    margin-top: 2rem;
+}
+
+.about .education table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.about .education table th,
+.about .education table td {
+    border: 1px solid #fdb827;
+    padding: 8px;
+    text-align: center;
+}
+
+.about .education table th {
+    background-color: #1a1a3a;
+    color: #fdb827;
+}
+
 /* Projects Section */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 2rem;
 }
 
 .project-card {
     background: #1a1a3a;
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 8px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -203,11 +228,13 @@ body {
     text-align: left;
     max-width: 800px;
     margin: 0 auto;
+    padding: 2rem;
 }
 
 .contact h2 {
     color: #fdb827;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .contact .info {
@@ -216,10 +243,22 @@ body {
 
 .contact .info p {
     margin-bottom: 0.5rem;
+    font-size: 1rem;
 }
 
 .contact .social-links {
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-top: 1rem;
+}
+
+.contact .social-links a {
+    font-size: 1.5rem;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.contact .social-links a:hover {
+    color: #fdb827;
 }
