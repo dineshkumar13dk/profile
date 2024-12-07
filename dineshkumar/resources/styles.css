@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Arial', sans-serif;
     color: #fff;
@@ -152,62 +153,64 @@ body {
 
 /* About Section */
 .about {
-    margin: 2rem auto; /* Center the section with top and bottom spacing */
-    text-align: left; /* Align text to the left for readability */
-    width: 90%; /* Use most of the screen width while keeping spacing */
-    max-width: 1000px; /* Limit the maximum width for larger screens */
-    padding: 2rem; /* Add padding inside the box */
-    background-color: #1a1a3a; /* Dark background */
-    border-radius: 10px; /* Rounded corners for a polished look */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
-    color: #fff; /* White text color for contrast */
+    margin: 2rem auto;
+    text-align: left;
+    width: 90%;
+    max-width: 1000px;
+    padding: 2rem;
+    background-color: #1a1a3a;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: #fff;
 }
 
 /* Heading */
 .about h2 {
-    font-size: 2rem; /* Adjust font size for better balance */
-    color: #fdb827; /* Highlighted header color */
-    margin-bottom: 1.5rem; /* Add spacing below the heading */
-    text-align: center; /* Center the heading */
+    font-size: 2rem;
+    color: #fdb827;
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 /* Section Subheadings */
 .about h3 {
-    font-size: 1.5rem; /* Adjusted subheading size */
+    font-size: 1.5rem;
     color: #fdb827;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
-    border-bottom: 2px solid #fdb827; /* Underline subheading */
-    display: inline-block; /* Prevent full-width underline */
-    padding-bottom: 0.3rem; /* Add space below the text */
+    border-bottom: 2px solid #fdb827;
+    display: inline-block;
+    padding-bottom: 0.3rem;
 }
 
 /* Paragraph Styling */
 .about p {
-    font-size: 1.1rem; /* Adjust paragraph size */
-    line-height: 1.6; /* Better line spacing for readability */
-    margin-bottom: 1rem; /* Space below paragraphs */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
 /* Education and Skills Lists */
 .about ul {
-    list-style-type: none; /* Remove default bullets */
-    padding-left: 0; /* Align content to the left */
+    list-style-type: none;
+    padding-left: 0;
 }
 
 .about li {
-    font-size: 1.1rem; /* Maintain a consistent font size */
-    line-height: 1.8; /* Add line spacing for clarity */
-    margin-bottom: 0.8rem; /* Add spacing between list items */
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
 }
 
 .about li strong {
-    color: #fdb827; /* Highlight important text */
+    color: #fdb827;
+    /* Highlight important text */
 }
 
 /* Contact Details */
 .about p strong {
-    color: #fdb827; /* Highlight labels */
+    color: #fdb827;
+    /* Highlight labels */
 }
 
 /* Contact Information */
@@ -226,9 +229,11 @@ body {
 /* Projects Section */
 .projects {
     display: flex;
-    flex-wrap: wrap;  /* Allow wrapping to multiple lines */
+    flex-wrap: wrap;
+    /* Allow wrapping to multiple lines */
     justify-content: space-between;
-    gap: 2rem; /* Add space between project boxes */
+    gap: 2rem;
+    /* Add space between project boxes */
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -238,13 +243,16 @@ body {
     text-align: center;
     color: #fdb827;
     font-size: 2rem;
-    margin-bottom: 2rem; /* Space below the heading */
-    width: 100%; /* Full width */
+    margin-bottom: 2rem;
+    /* Space below the heading */
+    width: 100%;
+    /* Full width */
 }
 
 /* Project Card */
 .projects .project {
-    flex: 0 0 48%; /* Allow each project to take up 48% of the container width */
+    flex: 0 0 48%;
+    /* Allow each project to take up 48% of the container width */
     padding: 1rem;
     background-color: #1a1a3a;
     border-radius: 10px;
