@@ -149,3 +149,96 @@ body {
 .home .info .social-links a:hover {
     color: #fdb827;
 }
+
+/* About Section */
+.about {
+    padding: 2rem;
+    background: #1a1a3a;
+    color: #fff;
+    border-radius: 10px;
+    margin: 2rem;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fdb827;
+}
+
+.about ul {
+    list-style-type: none;
+    margin: 1rem 0;
+}
+
+.about ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Projects Section */
+.projects {
+    padding: 2rem;
+    background: #0e0e23;
+    color: #fff;
+    border-radius: 10px;
+    margin: 2rem;
+}
+
+.projects h2 {
+    font-size: 2rem;
+    color: #fdb827;
+    margin-bottom: 1rem;
+}
+
+.projects .project {
+    background: #1a1a3a;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 2rem;
+    background: #1a1a3a;
+    color: #fff;
+    border-radius: 10px;
+    margin: 2rem;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    color: #fdb827;
+    margin-bottom: 1rem;
+}
+
+.contact form {
+    margin-top: 1rem;
+}
+
+.contact form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.contact form button {
+    padding: 0.7rem 1.5rem;
+    background: #fdb827;
+    color: #1a1a3a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact form button:hover {
+    background: #ffb400;
+}
