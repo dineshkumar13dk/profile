@@ -111,10 +111,22 @@ body {
     justify-content: center;
     padding: 2rem;
     transition: margin-left 0.3s ease;
+    overflow-y: auto;
+    height: 100vh;
 }
 
-.main-content.expanded {
-    margin-left: 0;
+.main-content>* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.projects,
+.about,
+.contact {
+    width: 100%;
+    max-width: 1200px;
+    /* Set max-width to avoid overflow */
+    margin: 0 auto;
 }
 
 /* Last Updated Footer */
@@ -242,10 +254,8 @@ body {
 .projects {
     display: flex;
     flex-wrap: wrap;
-    /* Allow wrapping to multiple lines */
     justify-content: space-between;
     gap: 2rem;
-    /* Add space between project boxes */
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -256,18 +266,16 @@ body {
     color: #fdb827;
     font-size: 2rem;
     margin-bottom: 2rem;
-    /* Space below the heading */
     width: 100%;
-    /* Full width */
 }
 
 /* Project Card */
 .projects .project {
     flex: 0 0 48%;
-    /* Allow each project to take up 48% of the container width */
     padding: 1rem;
     background-color: #1a1a3a;
     border-radius: 10px;
+    max-width: 48%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -321,4 +329,39 @@ body {
 
 .contact a:hover {
     text-decoration: underline;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fdb827;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #0e0e23;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .projects .project {
+        flex: 0 0 100%;
+    }
 }
