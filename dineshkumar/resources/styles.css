@@ -116,6 +116,18 @@ body {
     margin-left: 0;
 }
 
+/* Last Updated Footer */
+.last-updated {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #fdb827;
+    background-color: #1a1a3a;
+    padding: 1rem;
+    border-top: 1px solid #444;
+}
+
+
 .home {
     text-align: center;
 }
