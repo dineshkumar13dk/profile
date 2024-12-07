@@ -1,1 +1,59 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
 
+header {
+    background: #0073e6;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 1rem;
+}
+
+h1, h2, h3 {
+    color: #0073e6;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.user-details, .profile-form {
+    text-align: center;
+}
+
+.profile-form input[type="text"], 
+.profile-form input[type="file"] {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    background: #0073e6;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #005bb5;
+}
