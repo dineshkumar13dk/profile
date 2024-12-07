@@ -3,25 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Dinesh Kumar</title>
     <link rel="stylesheet" href="resources/styles.css">
 </head>
 <body>
     <header class="header">
-        <h1>User Dashboard</h1>
+        <div class="container">
+            <h1>Profile Dashboard</h1>
+        </div>
     </header>
-    <main class="container">
-        <section class="user-details">
+    <main class="dashboard container">
+        <!-- Profile Section -->
+        <section class="profile-card">
             <img id="user-photo" src="assets/images/default-profile.jpg" alt="User Photo" class="profile-photo">
             <h2 id="user-name">Your Name</h2>
+            <p class="user-role">Java Developer | Frontend & Backend Enthusiast</p>
+        </section>
+
+        <!-- User Details Section -->
+        <section class="details-card">
             <h3>Skills</h3>
-            <ul id="user-skills">
+            <ul id="user-skills" class="skills-list">
                 <li>Java</li>
                 <li>Spring Boot</li>
                 <li>HTML/CSS</li>
             </ul>
+
+            <h3>Contact</h3>
+            <ul class="contact-list">
+                <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+                <li>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+            </ul>
+
             <button class="btn" onclick="location.href='profile.html'">Edit Profile</button>
         </section>
     </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 S Dinesh Kumar. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="assets/js/dashboard.js"></script>
 </body>
 </html>
