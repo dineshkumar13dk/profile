@@ -165,14 +165,17 @@ body {
     margin-bottom: 0.8rem;
 }
 
-/* Responsive Image Styling */
+/* Center and Set Fixed Size for Images */
 .responsive-image {
-    align-items: center;
+    display: block;
+    max-width: 800px;
+    width: 100%;
     height: auto;
+    margin: 1rem auto;
     border-radius: 10px;
-    margin: 1rem 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+
 
 /* Back to Projects Link */
 .back-link {
