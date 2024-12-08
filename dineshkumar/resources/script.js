@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const lastUpdatedElement = document.getElementById("last-updated-time");
+    const lastUpdatedElement2 = document.getElementById("last-updated-time2");
 
     const now = new Date();
     const options = {
@@ -8,8 +9,19 @@ document.addEventListener("DOMContentLoaded", () => {
         day: "numeric",
     };
 
+    const now2 = new Date();
+    const options2 = {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+    };
+
     // Format the time and display
     lastUpdatedElement.textContent = now.toLocaleString("en-US", options);
+    lastUpdatedElement2.textContent = now2.toLocaleString("en-US", options2);
 });
 
 document.querySelectorAll('.dropdown-btn').forEach((btn) => {
