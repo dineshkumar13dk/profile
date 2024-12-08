@@ -194,6 +194,11 @@ body {
     object-fit: cover;
 }
 
+.portrait-image {
+    width: auto;
+    max-height: 400px;
+}
+
 /* Back to Projects Link */
 .back-link {
     display: block;
