@@ -363,28 +363,3 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-
-#explanation-container {
-    display: none;
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: #1a1a3a;
-    border-radius: 10px;
-}
-
-#explanation-container.hidden {
-    display: none;
-}
-
-.back-link {
-    display: inline-block;
-    margin-bottom: 1rem;
-    color: #fdb827;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.back-link:hover {
-    text-decoration: underline;
-}
