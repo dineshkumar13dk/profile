@@ -14,74 +14,142 @@ body {
     overflow-x: hidden;
 }
 
-/* Main Content Layout */
+/* Container Layout */
+.container {
+    display: flex;
+    width: 100%;
+    position: relative;
+    overflow-y: auto;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 300px;
+    background: #1a1a3a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.sidebar.closed {
+    transform: translateX(-100%);
+}
+
+.sidebar .logo h1 {
+    color: #fdb827;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.sidebar .nav-links {
+    list-style: none;
+    width: 100%;
+    text-align: left;
+    padding: 0 1rem;
+}
+
+.sidebar .nav-links li {
+    width: 100%;
+}
+
+.sidebar .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    transition: background 0.3s;
+}
+
+.sidebar .nav-links li a i {
+    margin-right: 1rem;
+}
+
+.sidebar .nav-links li a:hover {
+    background: #fdb827;
+    color: #1a1a3a;
+    border-radius: 5px;
+}
+
+/* Main Content */
 .main-content {
     flex: 1;
     margin-left: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 2rem;
     transition: margin-left 0.3s ease;
     overflow-y: auto;
     height: 100vh;
 }
 
-.sta-page {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+.main-content > * {
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
-/* Heading */
+/* STA Page */
+.sta-page {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #1a1a3a;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
 .sta-page h2 {
-    font-size: 2.5rem;
     color: #fdb827;
+    font-size: 2.5rem;
     text-align: center;
     margin-bottom: 2rem;
 }
 
-/* Section Titles */
+.sta-section {
+    margin-bottom: 2rem;
+}
+
 .sta-section h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #fdb827;
-    margin-top: 2rem;
     margin-bottom: 1rem;
     border-bottom: 2px solid #fdb827;
-    padding-bottom: 0.3rem;
-    text-align: center;
+    display: inline-block;
+    padding-bottom: 0.5rem;
 }
 
-/* Paragraph Styling */
-.sta-page p {
+.sta-section p, .sta-section ul {
     font-size: 1.2rem;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
-    text-align: justify;
+    margin-bottom: 1rem;
 }
 
-/* List Styling */
-.sta-page ul {
+.sta-section ul {
     list-style-type: disc;
-    padding-left: 2rem;
+    margin-left: 20px;
 }
 
-.sta-page li {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-/* Image Styling for Block Diagram and Results */
-.sta-page .responsive-image {
+.sta-section img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    display: block;
-    margin: 2rem auto;
 }
 
-/* Back Link Styling */
+/* Back Link */
 .back-link {
     display: inline-block;
-    margin: 2rem 0;
+    margin-top: 2rem;
     color: #fdb827;
     font-weight: bold;
     text-decoration: none;
@@ -91,4 +159,32 @@ body {
 
 .back-link:hover {
     text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1a1a3a;
+    color: #fdb827;
+    margin-top: 2rem;
+}
+
+footer .back-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #fdb827;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer .back-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+    }
 }
