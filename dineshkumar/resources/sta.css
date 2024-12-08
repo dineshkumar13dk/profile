@@ -169,32 +169,28 @@ body {
     margin-bottom: 2rem;
 }
 
-.sta-section .image-container {
+.image-container {
     display: flex;
-    justify-content: space-evenly;
-    gap: 1rem;
-}
-
-.responsive-image {
-    display: block;
-    max-width: 50%;
-    height: auto;
-    margin: 1rem auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.portrait-image {
-    display: block;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    width: auto;
-    max-height: 400px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .image-container figure {
-    justify-content: space-evenly;
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    max-width: 250px;
+    text-align: center;
+}
+
+.portrait-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .image-container figcaption {
@@ -203,7 +199,6 @@ body {
     color: #fdb827;
     font-weight: bold;
 }
-
 
 /* Back to Projects Link */
 .back-link {
