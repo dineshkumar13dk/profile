@@ -170,19 +170,10 @@ body {
 }
 
 .sta-section .image-container {
-    display: flex;
+    display: block;
     justify-content: space-between;
     gap: 1rem;
 }
-
-.sta-section .image-container img {
-    width: 48%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
 
 .responsive-image {
     display: block;
