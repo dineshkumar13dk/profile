@@ -195,7 +195,6 @@ body {
 
 .portrait-image {
     display: block;
-    margin: 1rem auto;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: auto;
