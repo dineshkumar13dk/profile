@@ -193,8 +193,8 @@ body {
 }
 
 .image-container figure {
-    text-align: center;
-    width: 48%;
+    justify-content: space-evenly;
+    width: 50%;
 }
 
 .image-container figcaption {
