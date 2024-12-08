@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
 document.querySelectorAll('.dropdown-btn').forEach((btn) => {
     btn.addEventListener('click', (e) => {
         const description = e.target.closest('figure').querySelector('.image-description');
-        const isHidden = description.style.display === 'none' || description.style.display === '';
-        description.style.display = isHidden ? 'block' : 'none';
-        btn.classList.toggle('rotate', isHidden);
+        const isOpen = description.classList.toggle('open');
+        btn.classList.toggle('rotate', isOpen);
     });
 });
+

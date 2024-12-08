@@ -258,6 +258,23 @@ footer {
     border-top: 1px solid #444;
 }
 
+.image-description {
+    max-height: 0; /* Initially hidden */
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    font-size: 0.9rem;
+    color: #fff;
+    margin-top: 0.5rem;
+    text-align: justify;
+    line-height: 1.5;
+    padding: 0 10px; /* Space for padding during expansion */
+}
+
+.image-description.open {
+    max-height: 200px; /* Set a max value sufficient for the largest content */
+    padding: 10px 10px;
+}
+
 .dropdown-btn {
     background: none;
     border: none;
@@ -265,14 +282,5 @@ footer {
     font-size: 1rem;
     cursor: pointer;
     margin-left: 5px;
-    transition: transform 0.3s;
-}
-
-.image-description {
-    display: none;
-    font-size: 0.9rem;
-    color: #fff;
-    margin-top: 0.5rem;
-    text-align: justify;
-    line-height: 1.5;
+    transition: transform 0.3s ease-in-out;
 }
