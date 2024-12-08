@@ -1,343 +1,117 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    color: #fff;
-    background-color: #0e0e23;
-    display: flex;
-    height: 100vh;
-    overflow-x: hidden;
-}
-
-/* Container Layout */
-.container {
-    display: flex;
-    width: 100%;
-    position: relative;
-    overflow-y: auto;
-}
-
-/* Sidebar */
-.sidebar {
-    width: 300px;
-    background: #1a1a3a;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 0;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    transform: translateX(0);
-    transition: transform 0.3s ease;
-}
-
-.sidebar.closed {
-    transform: translateX(-100%);
-}
-
-.sidebar .logo h1 {
-    color: #fdb827;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-}
-
-.sidebar .nav-links {
-    list-style: none;
-    width: 100%;
-    text-align: left;
-    padding: 0 1rem;
-}
-
-.sidebar .nav-links li {
-    width: 100%;
-}
-
-.sidebar .nav-links li a {
-    text-decoration: none;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    padding: 1rem 0;
-    transition: background 0.3s;
-}
-
-.sidebar .nav-links li a i {
-    margin-right: 1rem;
-}
-
-.sidebar .nav-links li a:hover {
-    background: #fdb827;
-    color: #1a1a3a;
-    border-radius: 5px;
-}
-
-/* Main Content */
-.main-content {
-    flex: 1;
-    margin-left: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    transition: margin-left 0.3s ease;
-    overflow-y: auto;
-    height: 100vh;
-}
-
-.main-content>* {
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-.projects,
-.about,
-.contact {
+/* General Styles for STA Page */
+.sta-page {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-/* Last Updated Footer */
-.last-updated {
-    margin-top: 2rem;
-    text-align: center;
-    font-size: 1rem;
-    color: #fdb827;
-    background-color: #1a1a3a;
-    padding: 1rem;
-    border-top: 1px solid #444;
-}
-
-.home {
-    text-align: center;
-}
-
-.home .profile img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #fdb827;
-    margin-bottom: 1rem;
-}
-
-.home .info p {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.home .info h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #fdb827;
-}
-
-.home .info .social-links a {
-    color: #fff;
-    font-size: 1.5rem;
-    margin: 0 0.5rem;
-    transition: color 0.3s;
-}
-
-.home .info .social-links a:hover {
-    color: #fdb827;
-}
-
-/* About Section */
-.about {
-    margin: 2rem auto;
-    text-align: left;
-    width: 90%;
-    max-width: 1000px;
     padding: 2rem;
     background-color: #1a1a3a;
+    color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    color: #fff;
+    margin-top: 2rem;
 }
 
-/* Heading */
-.about h2 {
-    font-size: 2rem;
+/* Headings for STA Page */
+.sta-page h2 {
+    font-size: 2.5rem;
     color: #fdb827;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     text-align: center;
 }
 
-/* Section Subheadings */
-.about h3 {
-    font-size: 1.5rem;
+/* Section Headers */
+.sta-section h3 {
+    font-size: 1.8rem;
     color: #fdb827;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
     border-bottom: 2px solid #fdb827;
-    display: inline-block;
-    padding-bottom: 0.3rem;
+    padding-bottom: 0.5rem;
 }
 
 /* Paragraph Styling */
-.about p {
+.sta-page p {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 1rem;
 }
 
-/* Education and Skills Lists */
-.about ul {
-    list-style-type: none;
-    padding-left: 0;
+/* List Styling for Objectives */
+.sta-page ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
 }
 
-.about li {
-    font-size: 1.1rem;
-    line-height: 1.8;
+.sta-page li {
     margin-bottom: 0.8rem;
 }
 
-.about li strong {
+/* Responsive Images */
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Back Link Styling */
+.back-link {
+    display: inline-block;
+    margin: 2rem 0;
     color: #fdb827;
-    /* Highlight important text */
-}
-
-/* Contact Details */
-.about p strong {
-    color: #fdb827;
-    /* Highlight labels */
-}
-
-/* Contact Information */
-.contact-info {
-    font-size: 1.2rem;
-}
-
-.contact-info p {
-    margin-bottom: 0.5rem;
-}
-
-.contact-info span {
     font-weight: bold;
-}
-
-/* Projects Section */
-.projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.projects h2 {
+    text-decoration: none;
+    font-size: 1.2rem;
     text-align: center;
-    color: #fdb827;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    width: 100%;
 }
 
-/* Project Card */
-.projects .project {
-    flex: 0 0 48%;
-    padding: 1rem;
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Add padding to the bottom of the page */
+footer {
+    padding: 2rem 0;
+    text-align: center;
     background-color: #1a1a3a;
-    border-radius: 10px;
-    max-width: 48%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.projects .project h3 {
+/* Apply Existing Project Styles to STA Page */
+.sta-page h2,
+.sta-section h3 {
+    font-family: 'Arial', sans-serif;
     color: #fdb827;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
 }
 
-.projects .project p {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 0.5rem;
+.sta-page p,
+.sta-page ul,
+.sta-page li {
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
-.projects .project a {
-    color: #fdb827;
-    text-decoration: none;
+.sta-page ul {
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
-.projects .project a:hover {
-    text-decoration: underline;
+.sta-page li {
+    margin-bottom: 0.8rem;
 }
 
-
-/* Contact Section */
-.contact {
-    text-align: center;
-    margin: 0 auto;
-    padding: 2rem;
-    max-width: 600px;
-}
-
-.contact h2 {
-    color: #fdb827;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-}
-
-.contact p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 1rem;
-}
-
-.contact a {
-    color: #fdb827;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact a:hover {
-    text-decoration: underline;
-}
-
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #fdb827;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: #0e0e23;
-}
-
-/* Responsive adjustments for smaller screens */
+/* For Responsive Layout and Layout Management */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        position: relative;
-        height: auto;
-    }
-
-    .main-content {
-        margin-left: 0;
+    .sta-page {
         padding: 1rem;
     }
 
-    .projects .project {
-        flex: 0 0 100%;
+    .sta-page h2 {
+        font-size: 2rem;
+    }
+
+    .sta-page h3 {
+        font-size: 1.5rem;
     }
 }
