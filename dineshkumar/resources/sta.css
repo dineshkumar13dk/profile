@@ -165,6 +165,25 @@ body {
     margin-bottom: 0.8rem;
 }
 
+.sta-section {
+    margin-bottom: 2rem;
+}
+
+.sta-section .image-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.sta-section .image-container img {
+    width: 48%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
 .responsive-image {
     display: block;
     max-width: 50%;
