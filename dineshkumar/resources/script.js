@@ -12,8 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const now2 = new Date();
     const options2 = {
         hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
+        minute: "2-digit"
     };
 
     // Format the time and display
