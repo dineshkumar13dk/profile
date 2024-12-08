@@ -203,14 +203,13 @@ body {
 }
 
 .image-container figcaption {
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
     font-size: 1rem;
     color: #fdb827;
     font-weight: bold;
     text-decoration: underline;
 }
 
-/* Back to Projects Link */
 .back-link {
     display: block;
     margin: 2rem auto;
