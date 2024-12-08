@@ -83,73 +83,103 @@ body {
 .main-content {
     flex: 1;
     margin-left: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 2rem;
     transition: margin-left 0.3s ease;
     overflow-y: auto;
     height: 100vh;
 }
 
-.main-content > * {
+.main-content>* {
     max-width: 100%;
     box-sizing: border-box;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+}
+
+/* Page-Specific Styles for STA */
+
 /* STA Page */
 .sta-page {
-    width: 90%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
     background-color: #1a1a3a;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: #fff;
 }
 
+/* Page Heading */
 .sta-page h2 {
-    color: #fdb827;
     font-size: 2.5rem;
+    color: #fdb827;
     text-align: center;
     margin-bottom: 2rem;
-}
-
-.sta-section {
-    margin-bottom: 2rem;
-}
-
-.sta-section h3 {
-    font-size: 1.8rem;
-    color: #fdb827;
-    margin-bottom: 1rem;
     border-bottom: 2px solid #fdb827;
-    display: inline-block;
     padding-bottom: 0.5rem;
 }
 
-.sta-section p, .sta-section ul {
-    font-size: 1.2rem;
-    line-height: 1.6;
+/* Section Heading */
+.sta-section h3 {
+    font-size: 1.8rem;
+    color: #fdb827;
+    margin-top: 2rem;
     margin-bottom: 1rem;
+    border-bottom: 2px solid #fdb827;
+    display: inline-block;
+    padding-bottom: 0.3rem;
 }
 
+/* Section Paragraphs */
+.sta-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+/* Objectives List */
 .sta-section ul {
     list-style-type: disc;
-    margin-left: 20px;
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
 }
 
-.sta-section img {
+.sta-section li {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+}
+
+/* Responsive Image Styling */
+.responsive-image {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    margin: 1rem 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Back Link */
+/* Back to Projects Link */
 .back-link {
-    display: inline-block;
-    margin-top: 2rem;
+    display: block;
+    margin: 2rem auto;
     color: #fdb827;
     font-weight: bold;
     text-decoration: none;
@@ -161,30 +191,26 @@ body {
     text-decoration: underline;
 }
 
-/* Footer Styling */
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fdb827;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #0e0e23;
+}
+
+/* Footer */
 footer {
     text-align: center;
-    padding: 1rem;
-    background-color: #1a1a3a;
-    color: #fdb827;
     margin-top: 2rem;
-}
-
-footer .back-link {
-    display: inline-block;
-    margin-top: 1rem;
+    padding: 1rem;
+    background: #1a1a3a;
     color: #fdb827;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-footer .back-link:hover {
-    text-decoration: underline;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .main-content {
-        margin-left: 0;
-    }
+    border-top: 1px solid #444;
 }
