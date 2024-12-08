@@ -6,77 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMART TRAVELLERS APP - Explanation</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
     <div class="container">
-        <!-- Header Section -->
-        <header>
-            <h1>SMART TRAVELLERS APP</h1>
-            <a href="projects.html" class="back-link">← Back to Projects</a>
-        </header>
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>Dashboard</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../index"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="projects"><i class="fas fa-briefcase"></i>Projects</a></li>
+                <li><a href="about"><i class="fas fa-user"></i>About</a></li>
+                <li><a href="contact"><i class="fas fa-envelope"></i>Contact</a></li>
+            </ul>
+            <div class="last-updated">
+                <p>Last Updated: <span id="last-updated-time"></span></p>
+            </div>
+        </aside>
 
-        <!-- Main Content -->
-        <main>
-            <!-- Abstraction Section -->
-            <section>
-                <h2>Abstraction</h2>
-                <p>
-                    The SMART TRAVELLERS APP (STA) is a mobile application designed to enhance user experiences during
-                    travel by providing real-time data, personalized recommendations, and easy-to-use navigation
-                    features. It integrates cutting-edge technologies like Firebase and Google Cloud to deliver seamless
-                    performance.
+        <main class="main-content">
+            <div class="about">
+                <h2>SMART TRAVELLERS APP - Explanation</h2>
+
+                <h3>Abstraction</h3>
+                <p>The SMART TRAVELLERS APP (STA) aims to revolutionize the travel experience by providing users with an
+                    integrated platform to plan, book, and manage trips. It leverages advanced technologies to deliver
+                    personalized travel recommendations.</p>
+
+                <h3>Introduction</h3>
+                <p>This project was developed using Flutter, Dart, Firebase, and Google Cloud. The STA app simplifies
+                    travel logistics and provides real-time updates, helping travelers navigate challenges seamlessly.
                 </p>
-            </section>
 
-            <!-- Introduction Section -->
-            <section>
-                <h2>Introduction</h2>
-                <p>
-                    STA addresses common challenges faced by travelers, such as navigation, time management, and
-                    finding nearby attractions. By leveraging cloud technologies and a responsive user interface, the
-                    application ensures a smooth journey for users worldwide.
-                </p>
-            </section>
-
-            <!-- Objectives Section -->
-            <section>
-                <h2>Objectives</h2>
+                <h3>Objectives</h3>
                 <ul>
-                    <li>To provide a platform for travelers to plan their trips effectively.</li>
-                    <li>To ensure real-time updates on weather, routes, and tourist attractions.</li>
-                    <li>To integrate features like offline maps and language translation for global users.</li>
+                    <li>To provide a user-friendly interface for managing travel plans.</li>
+                    <li>To enable real-time updates for bookings and transportation.</li>
+                    <li>To integrate AI-based travel recommendations for users.</li>
                 </ul>
-            </section>
 
-            <!-- Block Diagram Section -->
-            <section>
-                <h2>Block Diagram</h2>
-                <div>
-                    <img src="../images/sta_block_diagram.png" alt="STA Block Diagram" class="responsive-image">
-                </div>
-            </section>
+                <h3>Block Diagram</h3>
+                <img src="../images/block_diagram_sta.png" alt="Block Diagram of SMART TRAVELLERS APP"
+                    class="responsive-image">
 
-            <!-- Simulation and Results Section -->
-            <section>
-                <h2>Simulation and Results</h2>
-                <p>
-                    The simulation of STA involved testing various travel scenarios to ensure functionality and
-                    reliability. Below is an image showcasing the results of one such simulation, highlighting the app's
-                    ability to process and deliver accurate travel recommendations.
-                </p>
-                <div>
-                    <img src="../images/sta_simulation_result.png" alt="STA Simulation Results"
-                        class="responsive-image">
-                </div>
-            </section>
+                <h3>Simulation and Results</h3>
+                <p>The app was tested with a sample user base to analyze its effectiveness in planning trips
+                    efficiently. Below is the result of one such simulation.</p>
+                <img src="../images/simulation_results_sta.png" alt="Simulation Results of SMART TRAVELLERS APP"
+                    class="responsive-image">
+
+                <a href="projects.html" class="back-link">Back to Projects</a>
+            </div>
         </main>
-
-        <!-- Footer Section -->
-        <footer>
-            <a href="projects.html" class="back-link">← Back to Projects</a>
-        </footer>
     </div>
+
+    <footer>
+        <a href="projects.html" class="back-link">Back to Projects</a>
+    </footer>
+
+    <script src="../script.js"></script>
 </body>
 
 </html>
