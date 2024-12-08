@@ -1,0 +1,77 @@
+/* General Styles for STA Page */
+.sta-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #1a1a3a;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Headings for STA Page */
+.sta-page h2 {
+    font-size: 2.5rem;
+    color: #fdb827;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Section Headers */
+.sta-section h3 {
+    font-size: 1.8rem;
+    color: #fdb827;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #fdb827;
+    padding-bottom: 0.5rem;
+}
+
+/* Paragraph Styling */
+.sta-page p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* List Styling for Objectives */
+.sta-page ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1.1rem;
+}
+
+.sta-page li {
+    margin-bottom: 0.8rem;
+}
+
+/* Responsive Images */
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Back Link Styling */
+.back-link {
+    display: inline-block;
+    margin: 2rem 0;
+    color: #fdb827;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Add padding to the bottom of the page */
+footer {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: #1a1a3a;
+}
