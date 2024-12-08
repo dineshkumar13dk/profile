@@ -268,10 +268,6 @@ footer {
     transition: transform 0.3s;
 }
 
-.dropdown-btn.rotate {
-    transform: rotate(180deg);
-}
-
 .image-description {
     display: none;
     font-size: 0.9rem;
