@@ -5,54 +5,55 @@
     margin: 0 auto;
     padding: 2rem;
     background-color: #1a1a3a;
-    /* Dark background */
     color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Heading */
+/* Heading Styling */
 .sta-page h2 {
     font-size: 2.5rem;
     color: #fdb827;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
-    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 /* Section Headers */
 .sta-section h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #fdb827;
     margin-top: 2rem;
     margin-bottom: 1rem;
     border-bottom: 3px solid #fdb827;
     padding-bottom: 0.5rem;
-    font-weight: 600;
     text-transform: uppercase;
 }
 
 /* Paragraph Styling */
 .sta-page p {
     font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    line-height: 1.8;
     color: #ddd;
+    margin-bottom: 1.5rem;
 }
 
-/* List Styling for Objectives */
+/* Styling for Bullet List under Objectives */
 .sta-page ul {
-    list-style-type: square;
-    padding-left: 20px;
+    list-style-type: disc;
+    padding-left: 30px;
     font-size: 1.1rem;
     color: #ccc;
 }
 
 .sta-page li {
     margin-bottom: 1rem;
-    line-height: 1.6;
+}
+
+/* Objective List: Highlight Important Text */
+.sta-page li strong {
+    color: #fdb827;
 }
 
 /* Image Styling */
@@ -60,23 +61,35 @@
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    margin-top: 1.5rem;
     margin-bottom: 2rem;
 }
 
-/* Back to Projects Link */
+/* Section Spacing for Better Layout */
+.sta-section {
+    margin-bottom: 2.5rem;
+}
+
+/* Back Link Styling */
 .back-link {
     display: inline-block;
-    margin-top: 2rem;
+    margin: 2rem 0;
     color: #fdb827;
     font-weight: bold;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     text-align: center;
+    background-color: #1a1a3a;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .back-link:hover {
     text-decoration: underline;
+    background-color: #fdb827;
+    color: #1a1a3a;
 }
 
 /* Footer Styles */
@@ -84,76 +97,20 @@ footer {
     padding: 2rem 0;
     text-align: center;
     background-color: #1a1a3a;
-    color: #fdb827;
-    font-size: 1.2rem;
-    border-top: 3px solid #fdb827;
 }
 
-/* Modify Sidebar and Main Content Layout for STA Page */
-.sidebar {
-    width: 300px;
-    background: #1a1a3a;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    transition: transform 0.3s ease;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.4);
+/* Improved Readability for Long Text */
+.sta-page p,
+.sta-page ul,
+.sta-page li {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.main-content {
-    margin-left: 300px;
-    padding: 2rem;
-    overflow-y: auto;
-    height: 100vh;
-}
-
-.main-content>* {
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-/* Styling for Navigation */
-.sidebar .nav-links li a {
-    text-decoration: none;
-    color: #fff;
-    padding: 1rem 0;
-    transition: background 0.3s;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-}
-
-.sidebar .nav-links li a:hover {
-    background: #fdb827;
-    color: #1a1a3a;
-    border-radius: 5px;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #fdb827;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: #0e0e23;
-}
-
-/* Responsive Adjustments */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .sta-page {
-        padding: 1.5rem;
-    }
-
-    .main-content {
-        margin-left: 0;
         padding: 1rem;
     }
 
@@ -165,7 +122,16 @@ footer {
         font-size: 1.5rem;
     }
 
+    .sta-page p {
+        font-size: 1rem;
+    }
+
+    .responsive-image {
+        max-width: 95%;
+    }
+
     .back-link {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
     }
 }
