@@ -167,6 +167,7 @@ body {
 
 /* Responsive Image Styling */
 .responsive-image {
+    align-items: center;
     width: 50%;
     height: auto;
     border-radius: 10px;
