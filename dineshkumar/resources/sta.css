@@ -165,16 +165,16 @@ body {
     margin-bottom: 0.8rem;
 }
 
-/* Center and Set Fixed Size for Images */
 .responsive-image {
     display: block;
-    max-width: 500px;
-    width: 100%;
-    height: auto;
+    width: 800px;
+    height: 400px;
+    object-fit: cover;
     margin: 1rem auto;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+
 
 
 /* Back to Projects Link */
