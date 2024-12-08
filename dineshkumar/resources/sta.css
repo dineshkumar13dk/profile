@@ -192,6 +192,19 @@ body {
     max-height: 400px;
 }
 
+.image-container figure {
+    text-align: center;
+    width: 48%;
+}
+
+.image-container figcaption {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #fdb827;
+    font-weight: bold;
+}
+
+
 /* Back to Projects Link */
 .back-link {
     display: block;
