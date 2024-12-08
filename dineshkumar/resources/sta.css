@@ -181,14 +181,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%;
-    max-width: 250px;
+    width: 50%;
+    max-width: 400px;
     text-align: center;
 }
 
 .portrait-image {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 400px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
