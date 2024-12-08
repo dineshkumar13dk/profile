@@ -168,7 +168,7 @@ body {
 /* Center and Set Fixed Size for Images */
 .responsive-image {
     display: block;
-    max-width: 800px;
+    max-width: 500px;
     width: 100%;
     height: auto;
     margin: 1rem auto;
