@@ -364,12 +364,3 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.center-content {
-    text-align: center;
-    margin: 2rem 0;
-}
-
-.center-text {
-    text-align: center;
-    margin-top: 1rem;
-}
