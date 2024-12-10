@@ -3,23 +3,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const lastUpdatedElement2 = document.getElementById("last-updated-time2");
 
     const now = new Date();
-    const options = {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-    };
+    const optionsDate = { year: "numeric", month: "long", day: "numeric" };
+    const optionsTime = { hour: "2-digit", minute: "2-digit" };
 
-    const now2 = new Date();
-    const options2 = {
-        hour: "2-digit",
-        minute: "2-digit"
-    };
+    // Save the current date and time in local storage if not already set
+    if (!localStorage.getItem("lastUpdatedDate")) {
+        localStorage.setItem("lastUpdatedDate", now.toLocaleString("en-US", optionsDate));
+        localStorage.setItem("lastUpdatedTime", now.toLocaleString("en-US", optionsTime));
+    }
 
-    // Format the time and display
-    lastUpdatedElement.textContent = now.toLocaleString("en-US", options);
-    lastUpdatedElement2.textContent = now2.toLocaleString("en-US", options2);
+    // Retrieve and display the last updated date and time from local storage
+    const lastUpdatedDate = localStorage.getItem("lastUpdatedDate");
+    const lastUpdatedTime = localStorage.getItem("lastUpdatedTime");
+
+    lastUpdatedElement.textContent = lastUpdatedDate;
+    lastUpdatedElement2.textContent = lastUpdatedTime;
+
+    // Update the local storage with the current date and time when the user is active
+    localStorage.setItem("lastUpdatedDate", now.toLocaleString("en-US", optionsDate));
+    localStorage.setItem("lastUpdatedTime", now.toLocaleString("en-US", optionsTime));
 });
 
+// Dropdown button logic remains the same
 document.querySelectorAll('.dropdown-btn').forEach((btn) => {
     btn.addEventListener('click', (e) => {
         const description = e.target.closest('figure').querySelector('.image-description');
@@ -27,4 +32,3 @@ document.querySelectorAll('.dropdown-btn').forEach((btn) => {
         btn.classList.toggle('rotate', isOpen);
     });
 });
-

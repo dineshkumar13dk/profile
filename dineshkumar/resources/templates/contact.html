@@ -29,17 +29,27 @@
             </div>
         </aside>
 
-
         <main class="main-content">
             <section class="contact">
                 <h2>Contact Me</h2>
                 <p>
-                    <strong>Email:</strong>dineshkumarnavarasam@gmail.com<br>
+                    <strong>Email:</strong> dineshkumarnavarasam@gmail.com<br>
+                <form id="contact-form" action="https://formspree.io/f/xqakoyel" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea><br>
+
+                    <button type="submit">Send Message</button>
+                </form>
+                <div id="response"></div>
                 </p>
             </section>
         </main>
     </div>
 
+    <script src="../contact.js"></script>
     <script src="../script.js"></script>
 </body>
 
