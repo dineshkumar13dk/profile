@@ -1,35 +1,24 @@
-// contact.js
-
 document.getElementById("contact-form").addEventListener("submit", function (event) {
-    event.preventDefault();  // Prevent the default form submission
+    event.preventDefault();
 
-    const form = event.target;
-    const formData = new FormData(form);
+    let formData = new FormData(this);
 
-    // Disable the submit button to prevent multiple submissions
-    document.querySelector("button[type='submit']").disabled = true;
-
-    // Send form data using fetch to Formspree
-    fetch(form.action, {
-        method: "POST",
+    fetch(this.action, {
+        method: 'POST',
         body: formData,
     })
         .then(response => {
             if (response.ok) {
-                // Success message
-                document.getElementById("response").innerHTML = "<p>Thank you! Your message has been sent.</p>";
-                form.reset();  // Reset the form fields after submission
+                // Handle success
+                alert("Message sent successfully!");
+                // Clear form or redirect
             } else {
-                // Error message
-                document.getElementById("response").innerHTML = "<p>There was an error sending your message. Please try again later.</p>";
+                // Handle error
+                alert("There was an error sending your message. Please try again later.");
             }
         })
         .catch(error => {
-            // Catching any errors during the fetch process
-            document.getElementById("response").innerHTML = "<p>There was an error sending your message. Please try again later.</p>";
-        })
-        .finally(() => {
-            // Re-enable the submit button after the request is completed
-            document.querySelector("button[type='submit']").disabled = false;
+            console.error('Error:', error);
+            alert("There was an error sending your message. Please try again later.");
         });
 });
