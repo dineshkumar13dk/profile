@@ -6,16 +6,12 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
     fetch(this.action, {
         method: 'POST',
         body: formData,
+        mode: 'no-cors'  // This bypasses CORS, but you won't get a response body
     })
-        .then(response => response.json()) // Assuming Formspree responds with JSON data
-        .then(data => {
-            if (data.success) {
-                // Handle success
+        .then(response => {
+            if (response.ok) {
                 alert("Message sent successfully!");
-                // Optionally clear the form
-                document.getElementById("contact-form").reset();
             } else {
-                // Handle failure (this part depends on how Formspree responds)
                 alert("There was an error sending your message. Please try again later.");
             }
         })
@@ -23,4 +19,5 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
             console.error('Error:', error);
             alert("There was an error sending your message. Please try again later.");
         });
+
 });
