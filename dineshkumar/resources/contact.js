@@ -7,13 +7,15 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
         method: 'POST',
         body: formData,
     })
-        .then(response => {
-            if (response.ok) {
+        .then(response => response.json()) // Assuming Formspree responds with JSON data
+        .then(data => {
+            if (data.success) {
                 // Handle success
                 alert("Message sent successfully!");
-                // Clear form or redirect
+                // Optionally clear the form
+                document.getElementById("contact-form").reset();
             } else {
-                // Handle error
+                // Handle failure (this part depends on how Formspree responds)
                 alert("There was an error sending your message. Please try again later.");
             }
         })
