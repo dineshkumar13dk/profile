@@ -358,7 +358,7 @@ body {
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    width: calc(40% - 1rem);
+    width: calc(50% - 1rem);
     transition: background-color 0.3s ease-in-out;
 }
 
