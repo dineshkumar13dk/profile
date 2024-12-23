@@ -292,7 +292,7 @@ body {
 
 #previous-companies {
     max-width: 1200px;
-    margin-top: 450px;
+    margin-top: auto;
     padding: 20px;
     background-color: #1a1a3a;
     border-radius: 10px;
@@ -330,7 +330,7 @@ body {
 }
 
 .back-link:hover {
-text-decoration: underline;
+    text-decoration: underline;
     color: #ffc857;
 }
 
