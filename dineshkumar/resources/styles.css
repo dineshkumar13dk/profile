@@ -329,9 +329,9 @@ body {
 .company-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 1.5rem;
-    width: 100%;
+    justify-content: space-between;
+    margin-top: 2rem;
 }
 
 .company {
@@ -339,8 +339,8 @@ body {
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    width: calc(50% - 1rem);
-    /* 50% width for two companies side by side */
+    width: calc(33.33% - 1rem);
+    /* Adjust width for 3 items per row */
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -407,7 +407,13 @@ body {
         flex: 0 0 100%;
     }
 
-    .company-item {
-        flex: 0 0 100%;
+    .company-list {
+        justify-content: center;
+    }
+
+    .company {
+        width: calc(100% - 1rem);
+        margin-bottom: 1rem;
+
     }
 }
