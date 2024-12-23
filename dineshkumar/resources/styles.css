@@ -315,20 +315,30 @@ body {
     color: #fdb827;
 }
 
-.company-item {
+.company-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.company {
     background: #222;
-    border-radius: 8px;
     padding: 1rem;
-    margin-bottom: 1.5rem;
+    border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    flex: 0 0 48%;
+    width: calc(50% - 1rem);
+}
+
+.company h3 {
+    font-size: 1.5rem;
+    color: #fdb827;
 }
 
 .company-link {
     text-decoration: none;
     color: #fdb827;
-    font-size: 1.5rem;
-    font-weight: bold;
 }
 
 .company-link:hover {
@@ -344,25 +354,7 @@ body {
     color: #fdb827;
 }
 
-.divider {
-    margin: 20px 0;
-    border: none;
-    border-top: 1px solid #444;
-}
-
-.company-link:hover {
-    text-decoration: underline;
-}
-
-.details-link {
-    text-decoration: none;
-    color: #007bff;
-}
-
-.details-link:hover {
-    color: #fdb827;
-}
-
+/* Divider */
 .divider {
     margin: 20px 0;
     border: none;
