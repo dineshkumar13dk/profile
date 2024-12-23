@@ -307,31 +307,35 @@ body {
     text-decoration: underline;
 }
 
-/* Styling for Previously Worked Companies Section */
 #previous-companies {
     margin: 20px auto;
-    padding: 20px;
+    padding: 40px;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 90%;
+    max-width: 1200px;
 }
 
 .companies-title {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .company-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px; 
 }
 
 .company-item {
-    margin: 10px 0;
+    margin: 0;
 }
 
 .company-link {
@@ -343,7 +347,7 @@ body {
     text-decoration: none;
     color: #444;
     background-color: #fff;
-    padding: 10px 15px;
+    padding: 15px 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
@@ -352,7 +356,7 @@ body {
 .company-link i {
     margin-right: 10px;
     color: #007bff;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .company-link:hover {
@@ -361,7 +365,6 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
 }
-
 
 ::-webkit-scrollbar {
     width: 6px;
