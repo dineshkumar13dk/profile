@@ -362,9 +362,9 @@ body {
 .company {
     background: #1c2a42;
     padding: 1.5rem;
-    border-radius: 7px;
+    border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    width: calc(50% - 1rem);
+    width: calc(45% - 2rem);
     transition: background-color 0.3s ease-in-out;
 }
 
