@@ -14,7 +14,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Container Layout */
 .container {
     display: flex;
     width: 100%;
@@ -22,7 +21,6 @@ body {
     overflow-y: auto;
 }
 
-/* Sidebar */
 .sidebar {
     width: 300px;
     background: #1a1a3a;
@@ -79,7 +77,6 @@ body {
     border-radius: 5px;
 }
 
-/* Main Content */
 .main-content {
     flex: 1;
     margin-left: 300px;
@@ -105,7 +102,6 @@ body {
     margin: 0 auto;
 }
 
-/* Last Updated Footer */
 .last-updated {
     margin-top: 2rem;
     text-align: center;
@@ -151,7 +147,6 @@ body {
     color: #fdb827;
 }
 
-/* About Section */
 .about {
     margin: 2rem auto;
     text-align: left;
@@ -164,7 +159,6 @@ body {
     color: #fff;
 }
 
-/* Heading */
 .about h2 {
     font-size: 2rem;
     color: #fdb827;
@@ -172,7 +166,6 @@ body {
     text-align: center;
 }
 
-/* Section Subheadings */
 .about h3 {
     font-size: 1.5rem;
     color: #fdb827;
@@ -183,14 +176,12 @@ body {
     padding-bottom: 0.3rem;
 }
 
-/* Paragraph Styling */
 .about p {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 1rem;
 }
 
-/* Education and Skills Lists */
 .about ul {
     list-style-type: none;
     padding-left: 0;
@@ -204,16 +195,12 @@ body {
 
 .about li strong {
     color: #fdb827;
-    /* Highlight important text */
 }
 
-/* Contact Details */
 .about p strong {
     color: #fdb827;
-    /* Highlight labels */
 }
 
-/* Contact Information */
 .contact-info {
     font-size: 1.2rem;
 }
@@ -226,7 +213,6 @@ body {
     font-weight: bold;
 }
 
-/* Projects Section */
 .projects {
     display: flex;
     flex-wrap: wrap;
@@ -245,7 +231,6 @@ body {
     width: 100%;
 }
 
-/* Project Card */
 .projects .project {
     flex: 0 0 48%;
     padding: 1rem;
@@ -276,8 +261,6 @@ body {
     text-decoration: underline;
 }
 
-
-/* Contact Section */
 .contact {
     text-align: center;
     margin: 0 auto;
@@ -337,7 +320,8 @@ body {
 
 .previous-index-link {
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 15px;
+    margin: 50px;
     color: #fdb827;
 }
 
@@ -347,7 +331,7 @@ body {
 }
 
 .back-link:hover {
-text-decoration: underline;
+    text-decoration: underline;
     color: #ffc857;
 }
 
