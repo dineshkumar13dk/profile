@@ -311,24 +311,17 @@ body {
     text-align: center;
     font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     color: #fdb827;
-}
-
-.company-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
 }
 
 .company-item {
     background: #222;
     border-radius: 8px;
     padding: 1rem;
-    width: 48%;
     margin-bottom: 1.5rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    flex: 0 0 48%;
 }
 
 .company-link {
@@ -336,6 +329,25 @@ body {
     color: #fdb827;
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.company-link:hover {
+    text-decoration: underline;
+}
+
+.details-link {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.details-link:hover {
+    color: #fdb827;
+}
+
+.divider {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #444;
 }
 
 .company-link:hover {
@@ -388,6 +400,10 @@ body {
     }
 
     .projects .project {
+        flex: 0 0 100%;
+    }
+
+    .company-item {
         flex: 0 0 100%;
     }
 }
