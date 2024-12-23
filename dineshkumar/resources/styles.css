@@ -309,8 +309,8 @@ body {
 
 #previous-companies {
     max-width: 1200px;
-    margin-top: 450px;
-    padding-top: 20px;
+    margin: 450px auto;
+    padding: 20px;
     background-color: #1a1a3a;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -347,7 +347,7 @@ body {
 }
 
 .back-link:hover {
-    text-decoration: underline;
+text-decoration: underline;
     color: #ffc857;
 }
 
@@ -364,7 +364,7 @@ body {
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    width: 500px;
+    width: calc(50% - 1rem);
     transition: background-color 0.3s ease-in-out;
 }
 
