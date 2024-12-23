@@ -325,14 +325,13 @@ body {
     padding-bottom: 0.5rem;
 }
 
-/* Company Containers */
 .company-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
-    justify-content: space-between;
-    margin-top: 2rem;
+    width: 100%;
 }
+
 
 .company {
     background: #222;
@@ -340,7 +339,6 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: calc(33.33% - 1rem);
-    /* Adjust width for 3 items per row */
     transition: background-color 0.3s ease-in-out;
 }
 
