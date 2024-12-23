@@ -307,26 +307,26 @@ body {
     text-decoration: underline;
 }
 
-/* Center-align the section title */
 .section-title {
     text-align: center;
-    font-size: 28px;
+    font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
+    margin-bottom: 1.5rem;
+    color: #fdb827;
 }
 
-/* Style for company items */
 .company-item {
-    margin-bottom: 20px;
-    padding: 10px;
+    background: #222;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Clickable company links */
 .company-link {
     text-decoration: none;
-    color: #007bff;
-    font-size: 18px;
+    color: #fdb827;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -334,23 +334,20 @@ body {
     text-decoration: underline;
 }
 
-/* Details link style */
 .details-link {
     text-decoration: none;
-    color: #444;
-}
-
-.details-link:hover {
     color: #007bff;
 }
 
-/* Divider line between companies */
-.divider {
-    margin: 15px 0;
-    border: none;
-    border-top: 1px solid #ddd;
+.details-link:hover {
+    color: #fdb827;
 }
 
+.divider {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #444;
+}
 
 ::-webkit-scrollbar {
     width: 6px;
