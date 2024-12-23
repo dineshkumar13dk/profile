@@ -82,7 +82,6 @@ body {
 /* Main Content */
 .main-content {
     flex: 1;
-    margin-top: 10px;
     margin-left: 300px;
     display: flex;
     align-items: center;
@@ -351,7 +350,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 1.5rem;
-    width: 100%;
+    width: 90%;
 }
 
 .company {
@@ -360,7 +359,6 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: calc(50% - 1rem);
-    /* Two items per row */
     transition: background-color 0.3s ease-in-out;
 }
 
