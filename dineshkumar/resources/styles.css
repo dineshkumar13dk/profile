@@ -315,10 +315,18 @@ body {
     color: #fdb827;
 }
 
+.company-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
 .company-item {
     background: #222;
     border-radius: 8px;
     padding: 1rem;
+    width: 48%;
     margin-bottom: 1.5rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
