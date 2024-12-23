@@ -240,6 +240,11 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.projects .project:hover {
+    background-color: #293c5e;
+}
+
+
 .projects .project h3 {
     color: #fdb827;
     margin-bottom: 1rem;
