@@ -309,7 +309,7 @@ body {
 
 #previous-companies {
     max-width: 1200px;
-    margin-top: 80px;
+    margin-top: 500px;
     padding-top: 20px;
     background-color: #1a1a3a;
     border-radius: 10px;
@@ -350,20 +350,20 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 1.5rem;
-    width: 90%;
+    width: 100%;
 }
 
 .company {
-    background: #222;
+    background: #1c2a42;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    width: calc(50% - 1rem);
+    width: calc(40% - 1rem);
     transition: background-color 0.3s ease-in-out;
 }
 
 .company:hover {
-    background-color: #333;
+    background-color: #293c5e;
 }
 
 .company h3 {
