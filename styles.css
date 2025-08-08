@@ -122,7 +122,7 @@
 
         .previous-index-link {
             color: #00d1b2;
-            text-decoration: none;
+            text-decoration: underline;
             font-weight: 600;
             transition: color 0.3s;
         }

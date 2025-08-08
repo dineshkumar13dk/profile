@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.sidebar {
+    width: 280px;
+    background: #1a1a2e;
+    color: #fff;
+    padding: 2rem;
+    position: fixed;
+    height: 100%;
+    transition: width 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar .logo h1 {
+    font-size: 1.8rem;
+    color: #00d1b2;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 1.5rem 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover {
+    background: #00d1b2;
+    color: #1a1a2e;
+}
+
+.nav-links a i {
+    margin-right: 0.8rem;
+}
+
+.last-updated {
+    position: absolute;
+    bottom: 2rem;
+    font-size: 0.9rem;
+    color: #a0a0a0;
+}
+
+.main-content {
+    margin-left: 280px;
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about {
+    max-width: 900px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease;
+}
+
+.about h2 {
+    font-size: 2.2rem;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.about h3 {
+    font-size: 1.6rem;
+    color: #1a1a2e;
+    margin: 1.5rem 0 1rem;
+}
+
+.about ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about ul li {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.about ul li:before {
+    content: '\f058';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #00d1b2;
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+}
+
+.about ul li strong {
+    color: #1a1a2e;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1rem;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 1.5rem;
+    }
+
+    .about {
+        padding: 1.5rem;
+    }
+
+    .about h2 {
+        font-size: 1.8rem;
+    }
+
+    .about h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about h2 {
+        font-size: 1.6rem;
+    }
+
+    .about h3 {
+        font-size: 1.2rem;
+    }
+
+    .about ul li {
+        font-size: 1rem;
+    }
+}
