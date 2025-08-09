@@ -1,202 +1,244 @@
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    color: #fff;
-    background-color: #0e0e23;
-    display: flex;
-    height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
     overflow-x: hidden;
 }
 
-/* Container Layout */
 .container {
     display: flex;
-    width: 100%;
-    position: relative;
-    overflow-y: auto;
+    min-height: 100vh;
+    width: 100vw;
 }
 
-/* Sidebar */
 .sidebar {
-    width: 300px;
-    background: #1a1a3a;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 0;
+    width: 280px;
+    background: #1a1a2e;
+    color: #fff;
+    padding: 2rem;
     position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    transform: translateX(0);
-    transition: transform 0.3s ease;
-}
-
-.sidebar.closed {
-    transform: translateX(-100%);
+    height: 100%;
+    transition: width 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
 }
 
 .sidebar .logo h1 {
-    color: #fdb827;
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 1.8rem;
+    color: #00d1b2;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
-.sidebar .nav-links {
+.nav-links {
     list-style: none;
-    width: 100%;
-    text-align: left;
-    padding: 0 1rem;
 }
 
-.sidebar .nav-links li {
-    width: 100%;
+.nav-links li {
+    margin: 1.5rem 0;
 }
 
-.sidebar .nav-links li a {
-    text-decoration: none;
+.nav-links a {
     color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
-    padding: 1rem 0;
+    padding: 0.8rem;
+    border-radius: 8px;
     transition: background 0.3s;
 }
 
-.sidebar .nav-links li a i {
-    margin-right: 1rem;
+.nav-links a:hover {
+    background: #00d1b2;
+    color: #1a1a2e;
 }
 
-.sidebar .nav-links li a:hover {
-    background: #fdb827;
-    color: #1a1a3a;
-    border-radius: 5px;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #fdb827;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: #0e0e23;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    margin-top: 2rem;
-    padding: 1rem;
-    background: #1a1a3a;
-    color: #fdb827;
-    border-top: 1px solid #444;
+.nav-links a i {
+    margin-right: 0.8rem;
 }
 
 .last-updated {
-    margin-top: 2rem;
-    text-align: center;
-    font-size: 1rem;
-    color: #fdb827;
-    background-color: #1a1a3a;
-    padding: 1rem;
-    border-top: 1px solid #444;
+    position: absolute;
+    bottom: 2rem;
+    font-size: 0.9rem;
+    color: #a0a0a0;
 }
 
-/* Main Content */
 main {
+    margin-left: 280px;
     flex: 1;
-    margin-left: 300px;
-    padding: 2rem;
-    overflow-y: auto;
-    height: 100vh;
-    background-color: #0e0e23;
-    border-radius: 10px;
-    color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-main h2 {
-    font-size: 2.5rem;
-    color: #fdb827;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #fdb827;
-    padding-bottom: 0.5rem;
+main>h2 {
+    font-size: 2.2rem;
+    color: #1a1a2e;
     text-align: center;
-}
-
-main section {
-    margin-bottom: 2rem;
-}
-
-main section h3 {
-    font-size: 1.8rem;
-    color: #fdb827;
     margin-bottom: 1rem;
-    border-bottom: 2px solid #fdb827;
+}
+
+.back-link {
     display: inline-block;
-}
-
-main section ul {
-    list-style: disc;
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-main section ul li {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 0.5rem;
-}
-
-main section p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 1rem;
-    text-align: justify;
-}
-
-/* Back to Projects Link */
-main .back-link {
-    display: block;
-    margin: 2rem auto;
-    text-align: center;
-    color: #fdb827;
-    font-weight: bold;
+    color: #00d1b2;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    transition: color 0.3s;
 }
 
-main .back-link:hover {
-    text-decoration: underline;
+.back-link:hover {
+    color: #1a1a2e;
 }
 
-/* Responsive Adjustments */
+.application-info,
+.technologies-used,
+.role,
+.responsibilities {
+    max-width: 900px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease;
+    margin-bottom: 1.5rem;
+}
+
+.application-info h3,
+.technologies-used h3,
+.role h3,
+.responsibilities h3 {
+    font-size: 1.6rem;
+    color: #1a1a2e;
+    margin-bottom: 0.8rem;
+}
+
+.application-info ul,
+.technologies-used ul,
+.responsibilities ul {
+    list-style: none;
+    padding: 0;
+}
+
+.application-info ul li,
+.technologies-used ul li,
+.responsibilities ul li {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.application-info ul li:before,
+.technologies-used ul li:before,
+.responsibilities ul li:before {
+    content: '\f058';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #00d1b2;
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+}
+
+.application-info ul li strong,
+.technologies-used ul li strong,
+.responsibilities ul li strong {
+    color: #1a1a2e;
+}
+
+.role p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin: 0.8rem 0;
+}
+
+.role p strong {
+    color: #1a1a2e;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    main {
+        margin-left: 200px;
+    }
+}
+
 @media (max-width: 768px) {
     .sidebar {
         width: 100%;
-        position: relative;
         height: auto;
-        padding: 1rem;
-    }
-
-    .main-content {
-        margin-left: 0;
+        position: relative;
         padding: 1rem;
     }
 
     main {
         margin-left: 0;
-        padding: 1rem;
+        padding: 1.5rem;
+    }
+
+    .application-info,
+    .technologies-used,
+    .role,
+    .responsibilities {
+        padding: 1.5rem;
+    }
+
+    main>h2 {
+        font-size: 1.8rem;
+    }
+
+    .application-info h3,
+    .technologies-used h3,
+    .role h3,
+    .responsibilities h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    main>h2 {
+        font-size: 1.6rem;
+    }
+
+    .application-info h3,
+    .technologies-used h3,
+    .role h3,
+    .responsibilities h3 {
+        font-size: 1.2rem;
+    }
+
+    .application-info ul li,
+    .technologies-used ul li,
+    .responsibilities ul li,
+    .role p {
+        font-size: 1rem;
     }
 }
