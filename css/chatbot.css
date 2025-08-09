@@ -93,7 +93,7 @@ main>h2 {
 .back-link {
     display: inline-block;
     color: #00d1b2;
-    text-decoration: none;
+    text-decoration: underline;
     font-weight: 600;
     margin: 1rem 0;
     transition: color 0.3s;
