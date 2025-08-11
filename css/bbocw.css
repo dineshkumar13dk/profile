@@ -252,12 +252,12 @@ main>h2 {
     }
 }
 
-.dropdown-btn::after {
+.dropdown-button-bbocw::after {
     content: " ▼";
     margin-left: 5px;
 }
 
-.dropdown-btn.rotate::after {
+.dropdown-button-bbocw.rotate::after {
     content: " ▲";
 }
 
@@ -267,6 +267,7 @@ main>h2 {
     transition: max-height 0.4s ease, opacity 0.3s ease;
     opacity: 0;
     margin-bottom: 0.5rem;
+    cursor: pointer;
 }
 
 .image-description.open {
