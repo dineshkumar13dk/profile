@@ -260,3 +260,15 @@ main>h2 {
 .dropdown-btn.rotate::after {
     content: " ▲";
 }
+
+.image-description {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+    margin-bottom: 0.5rem;
+}
+
+.image-description.open {
+    opacity: 1;
+}
