@@ -56,38 +56,143 @@
                 <h3>Role</h3>
                 <p><strong>Full Stack Developer</strong></p>
             </section>
+            <section class="role">
+                <h3>Modeules Worked:</h3>
+                <p><strong>Profile Update, Application Renewal, Payment Gateway, Master Modules(Super Admin & User End
+                        Side), DB side: Table Id Mapping Tables for Masters</strong></p>
+            </section>
             <section class="responsibilities">
                 <h3>Responsibilities</h3>
                 <ul>
-                    <li><strong>Development:</strong> Successfully created the BBOCW application, utilizing
-                        Java 8 for the backend and leveraging Angular 16 Version for the frontend dynamic
-                        content delivery.</li>
-                    <li><strong>Client Location Visit:</strong> Visited Client Place which is located at
-                        Patna,Bihar
-                        for the requirement of getting knowledge for the project of the client end project
-                        manager.</li>
-                    <li><strong>Development at Client Location:</strong> Stayed at client Location More than 20+
-                        Days at initial stage of project development
-                        and returned back to chennai office location and completed the remaining requirement.
-                    </li>
-                    <li><strong>Leading and Contribution:</strong> For this project Total members were 8,
-                        TeamLead and 2 Contributing Resources and I'm one of the Resource.
-                        I've leaded the team for some specific modules which are those master for this project.
-                    </li>
-                    <li><strong> File Management:</strong> Developed user friendly features for filtering, opening,
-                        and viewing files, ensuring data is presented in an accessible and organized table format. </li>
-                    <li><strong> URL Shortening:</strong> Designed and implemented a feature that converts lengthy URLs
+                    <li><strong>Development:</strong> Successfully created the BBOCW application, utilizing Java 8 for
+                        the backend and leveraging Angular 16 Version for the frontend dynamic content delivery.</li>
+                    <li><strong>Client Location Visit:</strong> Visited Client Place which is located at Patna, Bihar
+                        for the requirement of getting knowledge for the project of the client end project manager.</li>
+                    <li><strong>Development at Client Location:</strong> Stayed at client Location More than 20+ Days at
+                        initial stage of project development and returned back to Chennai office location and completed
+                        the remaining requirement.</li>
+                    <li><strong>Leading and Contribution:</strong> For this project Total members were 8, TeamLead and 2
+                        Contributing Resources and I'm one of the Resource. I've led the team for some specific modules
+                        which are those masters for this project.</li>
+                    <ul>
+                        <p><strong>Profile Update Module Explanation:</strong></p>
+                        <li><strong>Profile Update Module Development:</strong> Architected a robust profile update
+                            system comprising to manage five PostgreSQL temporary tables,
+                            leveraging Angular 16 for dynamic frontend forms, client-side validation, and
+                            UI components like pagination (with lazy loading for optimized data retrieval),
+                            advanced search with regex-based filtering, and simulated progress bars during
+                            asynchronous API calls to enhance user experience.</li>
+                        <li><strong>Form Handling and Validation:</strong> Developed reactive forms using Angular’s
+                            FormBuilder with custom validators, including Aadhaar verification via the Verhoeff
+                            algorithm, relationship-based age restrictions (e.g., ensuring parent age ≥ worker age +
+                            16), and regex patterns for fields like PAN and mobile numbers. Implemented multilingual
+                            support with i18n for English/Hindi translations, dynamically enabling/disabling fields
+                            (e.g., address copy checkbox, OTP input based on verification status), and real-time form
+                            state management using RxJS observables for seamless user interaction.</li>
+                        <li><strong>Approval Workflow Integration:</strong> Built officer-side components (e.g.,
+                            UpdateListComponent, ApprovalDashboardComponent) using Angular 16 with HTTP query params for
+                            filtering drafts by flow status, user ID, or custom criteria, and user-side submission forms
+                            with SweetAlert2 for confirmation dialogs. Integrated error handling for API responses,
+                            displaying contextual error messages (e.g., invalid Aadhaar or missing mandatory fields) and
+                            success notifications, ensuring a responsive and intuitive approval process.</li>
+                        <li><strong>File Upload and Management Enhancements:</strong> Enhanced file upload functionality
+                            to support secure uploads of images/PDFs (e.g., Aadhaar, certificates) with client-side
+                            validation for file size (max 5MB), type (JPEG/PNG/PDF), and integrity checks. Implemented
+                            Angular-based preview/removal logic with FileReader API, secure URL generation using
+                            environment-configured prefixes, and drag-and-drop interfaces for improved usability,
+                            integrated with backend storage via Spring Boot multipart file handling.</li>
+                        <li><strong>Dynamic UI and User Experience:</strong> Engineered advanced UI features, including
+                            simulated loading progress with RxJS timers, OTP resend functionality with a 15-second
+                            cooldown using Angular’s setInterval, and dynamic date calculations (e.g., computing age
+                            from birth dates, validating work periods against predefined ranges). Added nominee
+                            percentage validations (sum ≤ 100% across family members) with real-time feedback using
+                            Angular’s FormArray, and incorporated accessibility features like ARIA labels and keyboard
+                            navigation for inclusivity.</li>
+                        <li><strong>Module Leadership and Collaboration:</strong> Led a team of 8 developers in
+                            delivering key sub-modules (family members, nominees, employment details), coordinating
+                            frontend-backend integration via Spring Boot REST APIs. Managed version control with Git,
+                            using feature branches, pull requests, and CI/CD pipelines (e.g., Jenkins) for seamless
+                            collaboration, code reviews, and deployment. Ensured alignment with project requirements
+                            through regular client syncs in Patna.</li>
+                        <li><strong>Backend API Development:</strong> Designed and implemented RESTful controllers in
+                            Spring Boot (e.g., /draft/generalInfoSave, /draft/familyMembersSave) for CRUD operations
+                            across five modules, utilizing Spring MVC annotations (@PostMapping, @GetMapping) and
+                            request/response DTOs for structured data exchange. Integrated Eureka for service discovery
+                            to handle microservices communication in a distributed architecture.</li>
+                        <li><strong>Service Layer Implementation:</strong> Developed service classes with @Transactional
+                            annotations for business logic, managing data persistence to PostgreSQL draft tables via JPA
+                            repositories. Implemented flow status code management ("1" for pending, "7" for approved,
+                            "9" for rejected, "0" for inactive), with audit trails capturing IP addresses, timestamps,
+                            and user actions using a Remarks entity, ensuring traceability and compliance with
+                            government audit requirements.</li>
+                        <li><strong>Validation and Error Handling:</strong> Integrated Spring’s BindingResult with
+                            custom Validator classes for server-side validation, enforcing constraints like unique
+                            Aadhaar numbers, valid date formats, and multilingual field consistency (English/Hindi).
+                            Created response beans (e.g., ResponseDTO) for standardized API responses, handling success,
+                            validation errors, and server failures with HTTP status codes (200, 400, 500) and localized
+                            error messages.</li>
+                        <li><strong>Pagination and Search Features:</strong> Implemented Spring Data JPA pageable
+                            queries (e.g., findByUserIdAndFlowStatusCodeIn) for efficient draft listing, supporting
+                            sorting (e.g., descending by ID), filtering by flow status or user ID, and dynamic searches
+                            by applicant name or Aadhaar using LIKE queries with parameterized inputs for SQL injection
+                            prevention. Optimized performance with indexed columns and query hints for large datasets.
+                        </li>
+                        <li><strong>Approval and Workflow Logic:</strong> Engineered a sophisticated approval workflow
+                            where user-submitted data is stored in temporary draft tables (e.g.,
+                            WorkersGeneralInfoDraft), listed by flow status codes for officer review, and processed for
+                            approval. Implemented methods like updateByIdForUserDetails to transition statuses (e.g.,
+                            "1" to "7" for approval, "9" for rejection), with remarks logged via a RemarksService for
+                            transparency. Ensured data consistency by synchronizing approved drafts to main tables
+                            (e.g., WorkersGeneralInfo) and marking rejected drafts as inactive ("0") in the draft table.
+                        </li>
+                        <li><strong>Single-Click Multi-Table Approval:</strong> Developed a single-click approval
+                            mechanism via a unified endpoint (e.g., /draft/approveAll) that processes all five draft
+                            tables (General Info, Other Info, Family Members, Employment Details, Nominees) in a single
+                            transaction. Used @Transactional to ensure atomicity, copying validated data from drafts to
+                            main tables upon approval, rolling back on any failure to prevent partial updates.
+                            Integrated frontend support with a single "Approve All" button in the officer dashboard,
+                            triggering a bulk API call with SweetAlert2 confirmation and real-time status updates via
+                            WebSocket notifications.</li>
+                        <li><strong>Draft-Based Workflow Management:</strong> Designed a temporary draft system where
+                            user inputs are stored in draft tables before approval, isolating changes to prevent direct
+                            updates to main tables. Implemented flow status tracking ("1" for pending submission, "7"
+                            for approved, "9" for rejected, "0" for inactive) with JPA queries to filter and display
+                            drafts in officer dashboards. Automated data cleanup for inactive drafts using scheduled
+                            Spring Batch jobs to optimize database performance.</li>
+                        <li><strong>Transactional Data Synchronization:</strong> Ensured ACID compliance during
+                            approvals using @Transactional, where approved drafts update main tables via batch
+                            inserts/updates (e.g., copying fields like name, Aadhaar, address), while rejected drafts
+                            remain in draft tables with status "0". Integrated audit logging with Remarks entity,
+                            capturing officer remarks, IP addresses, and timestamps for each state transition, ensuring
+                            traceability for government compliance.</li>
+                        <li><strong>Depth in Validation and Constraints:</strong> Enhanced backend validations for
+                            complex rules, such as nominee percentage sums (≤ 100%) calculated across family members
+                            using aggregate queries, relationship-based constraints (e.g., ensuring spouse age aligns
+                            with marriage dates), and uniqueness checks for Aadhaar/license numbers using JPA’s
+                            @UniqueConstraint. Added frontend validation feedback with Angular’s FormControl states,
+                            syncing with backend error responses for a cohesive user experience.</li>
+                        <li><strong>Audit and Logging Integration:</strong> Built a comprehensive audit system capturing
+                            every draft save, update, and approval action, storing IP addresses, timestamps, and officer
+                            remarks in a Remarks table. Implemented logging with Log4j2 for debugging and monitoring,
+                            and integrated Spring Actuator for real-time endpoint health checks and metrics, ensuring
+                            system reliability and audit compliance.</li>
+                        <li><strong>Module-Specific Enhancements:</strong> Handled specialized logic, including nominee
+                            percentage validations (preventing >100% totals using JPA aggregate functions), date
+                            conversions for work periods/birth dates with Joda-Time, and dynamic mappings for
+                            relationships/gender from master tables. Excluded obsolete bank module to streamline
+                            workflows, optimizing performance by reducing unnecessary database operations.</li>
+                    </ul>
+                    <li><strong>File Management:</strong> Developed user friendly features for filtering, opening, and
+                        viewing files, ensuring data is presented in an accessible and organized table format.</li>
+                    <li><strong>URL Shortening:</strong> Designed and implemented a feature that converts lengthy URLs
                         into easily clickable shortened links, accompanied by clear and informative labels for user
-                        convenience.
-                    </li>
-                    <li><strong> Content Moderation:</strong> Integrated a robust filter to manage inappropriate
-                        language, fostering
-                        respectful and constructive interactions among users.</li>
-                    <li><strong> Welcome Messages:</strong> Created personalized welcome messages that adapt based on
-                        the time of day, enhancing user engagement and creating a welcoming experience.</li>
-                    <li><strong> Version Control:</strong> Utilized Git for effective version control, ensuring
-                        organized project updates and facilitating smooth collaboration throughout the development
-                        process.</li>
+                        convenience.</li>
+                    <li><strong>Content Moderation:</strong> Integrated a robust filter to manage inappropriate
+                        language, fostering respectful and constructive interactions among users.</li>
+                    <li><strong>Welcome Messages:</strong> Created personalized welcome messages that adapt based on the
+                        time of day, enhancing user engagement and creating a welcoming experience.</li>
+                    <li><strong>Version Control:</strong> Utilized Git for effective version control, ensuring organized
+                        project updates and facilitating smooth collaboration throughout the development process.</li>
                 </ul>
             </section>
             <a href="projects.html" class="back-link">Back to Projects</a>
