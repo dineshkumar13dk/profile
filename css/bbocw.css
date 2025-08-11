@@ -253,6 +253,7 @@ main>h2 {
 }
 
 .dropdown-button-bbocw::after {
+    cursor: pointer;
     content: " ▼";
     margin-left: 5px;
 }
@@ -267,7 +268,6 @@ main>h2 {
     transition: max-height 0.4s ease, opacity 0.3s ease;
     opacity: 0;
     margin-bottom: 0.5rem;
-    cursor: pointer;
 }
 
 .image-description.open {
