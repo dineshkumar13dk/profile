@@ -58,14 +58,27 @@
             </section>
             <section class="role">
                 <h3>Modules Worked:</h3>
-                <p><strong>Profile Update, Application Renewal, Payment Gateway, Master Modules(Super Admin &
+                <p><strong>Profile Update, Application Renewal(Direct Renewal), Application Rnewal with profile
+                        update(Approval Process), Payment Gateway, Master Modules(Super Admin &
                         User End Side), DB side: PK Id Mapping in Tables for Master Modules</strong></p>
             </section>
             <section class="responsibilities">
                 <h3>Responsibilities</h3>
                 <ul>
-                    <li><strong>Development:</strong> Successfully created the BBOCW application, utilizing Java 8 for
-                        the backend and leveraging Angular 16 Version for the frontend dynamic content delivery.</li>
+                    <li>
+                        <ul>
+                            <li><strong>Development:</strong> Successfully created the BBOCW application, utilizing Java
+                                8 for the backend and leveraging Angular 16 Version for the frontend dynamic content
+                                delivery.
+                            </li>
+                            <li><strong>Development Detailed Explanation:</strong>
+                                <ul>Utilized Angular 16 for dynamic frontend forms, client-side
+                                    validations, and UI components (pagination with lazy loading for load balancing for
+                                    large datas, regex-based search, progress indicators), integrated with Spring Boot
+                                    REST APIs for seamless data flow and payment processing.</ul>
+                            </li>
+                        </ul>
+                    </li>
                     <li><strong>Client Location Visit:</strong> Visited Client Place which is located at Patna, Bihar
                         for the requirement of getting knowledge for the project of the client end project manager.</li>
                     <li><strong>Development at Client Location:</strong> Stayed at client Location More than 20+ Days at
@@ -268,6 +281,149 @@
                             </ul>
                         </figure>
                     </li>
+                    <li>
+                        <figure>
+                            <figcaption class="dropdown-button-bbocw">
+                                <strong style="cursor: pointer;">Application Renewal Module Explanation:</strong>
+                            </figcaption>
+                            <ul class="image-description">
+                                <li><strong>Renewal Module Development (Dual Workflows):</strong> Structured a
+                                    dual-workflow renewal system for worker registered application <strong>Direct
+                                        Renewal</strong> (streamlined renewal without profile changes) and
+                                    <strong>Renewal Application with Profile Update</strong> (temporary table-based
+                                    approval process). Managed
+                                    interactions with five PostgreSQL tables (WorkersGeneralInfo, WorkersOtherInfo,
+                                    WorkersEmploymentDetails, WorkersFamilyMembers, WorkersNominee) and a WorkerRenewal
+                                    temporary table.
+                                </li>
+                                <li><strong>Base Concept for both Renewals:</strong> User can renew their application
+                                    once registered. The expiry date will set to 5 years from the date of registration,
+                                    the renewal tab unlocks before 6 months of the expiry date. The worker can renew
+                                    their application advance of expiry date. If Renewing after Expiry date the charge
+                                    will be applied and the total of 2 times only allowed to renew their application, if
+                                    the user is renewing after Expiry date. If the worker is aged ≥ 60 years, the
+                                    renewal is not allowed, and the flow does'nt allow to renew. The renewal process
+                                    involves updating the WorkersGeneralInfo table with new expiry date, while the
+                                    WorkerRenewal table tracks renewal requests and statuses.</li>
+                                <li><strong>Direct Renewal Workflow:</strong> Developed a streamlined process for Direct
+                                    Renewal, enabling workers to renew their registered application Directly. Handled
+                                    updates directly to the WorkerRenewal table, calculating renewal fees and fines
+                                    (based on contribution amount × months delayed) and integrating with
+                                    <strong>PayU</strong>for temporary payment gateway, for the live server used bihar
+                                    government provided secured payment gateway. Implemented Angular components for form
+                                    submission, real-time payment status updates via WebSocket, and SweetAlert2 for user
+                                    confirmations.
+                                </li>
+                                <li><strong>Renewal with Profile Update Workflow:</strong> structured a temporary
+                                    table-based approval process for renewals requiring profile updates, concept of the
+                                    Profile Update Module. Workers submit updates to temporary tables. Implemented
+                                    endpoints with @Transactional annotations to ensure atomic updates across multiple
+                                    tables upon approval, with additional payment processing for profile updates via
+                                    PayU.</li>
+                                <li><strong>Officer-Side Approval Flow:</strong> Built officer-side components for
+                                    listing and managing renewal temporary table data with profile updates. Officers
+                                    filter datasets by flow status codes ("1" for pending, "3" for payment done, "7" for
+                                    approved, "8" for re-update, "9" for rejected) using HTTP query params. Implemented
+                                    approval/rejection logic with endpoints validating inputs with BindingResult,
+                                    updating temporary tables with statuses, and logging remarks via the Remarks entity.
+                                    Supported "Approve" (flowStatusCode "7") and "Re-Update" (flowStatusCode "8")
+                                    actions, with WebSocket notifications for real-time updates.
+                                </li>
+                                <li><strong>Form Handling and Validation:</strong> Developed reactive forms using
+                                    Angular’s FormBuilder, incorporating custom validators for Aadhaar, mobile numbers
+                                    (10-digit regex), and date constraints (e.g., renewal date restricted to expiry or
+                                    current date). Implemented multilingual support for English/Hindi, conditional field
+                                    enabling/disabling (e.g., address copy checkbox), and real-time validation feedback
+                                    using RxJS observables. Backend validation used Spring’s BindingResult for
+                                    constraints like unique Aadhaar numbers and valid date ranges.</li>
+                                <li><strong>File Upload and Management Enhancements:</strong> Enhanced file upload
+                                    functionality for documents (e.g., Aadhaar photos, bank passbooks, certificates) in
+                                    both workflows, supporting JPEG/PNG/PDF formats with a 10MB size limit. Implemented
+                                    Angular-based drag-and-drop interfaces, FileReader API for previews, and secure URL
+                                    generation. Backend handled multipart file uploads via Spring Boot, storing files
+                                    securely with unique identifiers.</li>
+                                <li><strong>Dynamic UI and User Experience:</strong> Developed advanced UI features,
+                                    including simulated loading progress with RxJS timers, a 15-second OTP resend
+                                    cooldown, and dynamic date calculations (e.g., next expiry date based on renewal
+                                    date or age limit of 60 years). Added accessibility features like ARIA labels,
+                                    keyboard navigation, and real-time validation feedback, ensuring an inclusive
+                                    experience across both workflows.</li>
+                                <li><strong>Payment Gateway Integration (Frontend):</strong> Integrated PayU for both
+                                    workflows, dynamically calculating renewal fees, fines (for late renewals), and
+                                    additional profile update fees for Renewal with Profile Update. Developed secure
+                                    payment forms with Angular’s ngNoForm, auto-submitting to PayU’s endpoint after
+                                    SHA-512 hash generation, and displaying real-time payment status using SweetAlert2
+                                    and WebSocket updates.</li>
+                                <li><strong>Payment Gateway Integration (Backend):</strong> Implemented PayU integration
+                                    in Spring Boot, generating secure transaction IDs and SHA-512 hashes using
+                                    PaymentUtil. Handled callback responses (/payment/payment-renewal-response) to
+                                    update Payment table status (Pending, Success, Failed), triggering WorkerRenewal
+                                    updates (e.g., flowStatusCode to "3" on payment success) and synchronizing expiry
+                                    dates in WorkersGeneralInfo. Added profile update payment logic for Renewal with
+                                    Profile Update, ensuring accurate fee calculations.</li>
+                                <li><strong>Module Leadership and Collaboration:</strong>We were a team of 8 developers,
+                                    Collaborated on frontend-backend integration via REST APIs. Managed version control
+                                    with Git with secured passwords. Conducted regular client syncs in Patna via online
+                                    meetings to align with project requirements for both workflows.</li>
+                                <li><strong>Backend API Development:</strong> Designed RESTful controllers for renewal
+                                    and profile update workflows. Used Spring MVC annotations and DTOs for structured
+                                    data exchange, with Eureka for microservices discovery to ensure scalability in a
+                                    distributed architecture.</li>
+                                <li><strong>Service Layer Implementation:</strong> Developed service classes with
+                                    @Transactional annotations for business logic, managing data persistence to
+                                    WorkerRenewal and temporary tables via JPA repositories. Handled flow status codes
+                                    ("1" for pending, "3" for payment done, "7" for approved, "8" for re-update, "9" for
+                                    rejected, "0" for inactive) with audit trails capturing IP addresses, timestamps,
+                                    and remarks.</li>
+                                <li><strong>Temporary Table-Based Workflow Management:</strong> Created WorkerRenewal
+                                    and
+                                    profile-specific Temporary tables to store user-submitted data, isolating changes
+                                    before
+                                    approval. Implemented flow status tracking and JPA queries for officer review, with
+                                    automated cleanup of inactive temporary tables using Spring Batch jobs for database
+                                    optimization.</li>
+                                <li><strong>Single-Click Multi-Table Approval:</strong> Developed a single-click
+                                    approval endpoint (/renewal/approveAll) for profile update and renewal workflows,
+                                    processing updates across all related tables transactionally using @Transactional.
+                                    For Renewal with Profile Update (e.g., updated expiry dates, profile fields) to main
+                                    tables, marking rejected temporary tables datasets as inactive ("0") and logging
+                                    actions via RemarksService. Integrated frontend support with an "Approve All"
+                                    button, triggering bulk API calls with WebSocket notifications.</li>
+                                <li><strong>Transactional Data Synchronization:</strong> Ensured ACID(Atomic,
+                                    Consistent, Isolated, Durable) compliance during approvals, updating main tables
+                                    (e.g., WorkersGeneralInfo expiryDate) for approved renewals and profile updates, and
+                                    marking rejected or payment-failed datasets as inactive ("0"). Integrated audit
+                                    logging with Remarks entity, capturing officer remarks, IP addresses, and timestamps
+                                    for government compliance.</li>
+                                <li><strong>Validation and Error Handling:</strong> Integrated Spring’s BindingResult
+                                    with custom Validator classes for server-side validation (e.g., unique Aadhaar,
+                                    valid date ranges, payment accuracy) across endpoints. Created response DTOs for
+                                    standardized API responses, with frontend mirroring validations using Angular’s
+                                    FormControl states for cohesive error feedback.</li>
+                                <li><strong>Pagination and Search Features:</strong> Built pageable JPA queries for
+                                    listing renewal and profile update datasets, supporting sorting (e.g., by ID
+                                    descending) and filtering by user ID or flow status. Implemented dynamic searches by
+                                    applicant name with parameterized <strong>LIKE</strong> queries to
+                                    prevent SQL injection, optimized with indexed columns.</li>
+                                <li><strong>Age-Based Renewal Restrictions:</strong> Implemented logic to prevent
+                                    renewals for workers aged ≥ 60 years, calculating age from date of birth and renewal
+                                    date, with Swal alerts for ineligibility. Backend enforced this via service-level
+                                    checks, updating flowStatusCode to "9" (rejected) if age criteria were not met, with
+                                    detailed remarks logged.</li>
+                                <li><strong>Audit and Logging Integration:</strong> Built a comprehensive audit system
+                                    capturing every renewal, payment, and profile update action in the Remarks table,
+                                    including IP addresses, timestamps, and officer remarks. Integrated Log4j2 for
+                                    debugging and Spring Actuator for endpoint health checks and metrics, ensuring
+                                    system reliability and audit compliance.</li>
+                                <li><strong>Module-Specific Enhancements:</strong> Handled specialized logic, including
+                                    fine amount calculations for late renewals, additional profile update fees, date
+                                    conversions with Joda-Time, and dynamic mappings for district/area/ward from master
+                                    tables. Optimized performance by excluding obsolete bank module and reducing
+                                    database operations.</li>
+                            </ul>
+                        </figure>
+                    </li>
+
                 </ul>
             </section>
             <a href="projects.html" class="back-link">Back to Projects</a>
