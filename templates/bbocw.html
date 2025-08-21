@@ -57,11 +57,14 @@
                 <p><strong>Full Stack Developer</strong></p>
             </section>
             <section class="role">
-                <h3>Master Modules Worked:</h3>
+                <h3>Main Master Modules Worked:</h3>
                 <p><strong>Profile Update, Application Renewal(Direct Renewal), Application Rnewal with profile
-                        update(Approval Process), Payment Gateway</strong></p>
-                <h3>Base Modules Worked:</h3>
-                <p><strong>Master Modules(Super Admin & User End Side), DB side: PK Id Mapping in Tables for Master
+                        update(Approval Process), Payment Gateway, RBAC(Role Based Access Control) - Geo x User x Role
+                        Mapping, Role x
+                        Module Mapping</strong></p>
+                <h3>Super Admin Modules Worked:</h3>
+                <p><strong>Master Modules(Super Admin & UserEnd Website), CMS(Content Management System), DMS(Document
+                        Management System - File Upload), DB side: PK Id Mapping in Tables for Master
                         Modules</strong></p>
             </section>
             <section class="responsibilities">
@@ -425,7 +428,109 @@
                             </ul>
                         </figure>
                     </li>
-
+                    <li>
+                        <figure>
+                            <figcaption class="dropdown-button-bbocw">
+                                <strong style="cursor: pointer;">RBAC - Geo x User x Role Mapping Module
+                                    Explanation:</strong>
+                            </figcaption>
+                            <ul class="image-description">
+                                <li><strong>RBAC Module Development:</strong> Structured a Role-Based Access Control
+                                    (RBAC) system with Geo x User x Role Mapping for the Bihar Building & Other
+                                    Construction Workers Welfare Board (BBOCW) application. Enabled dynamic user
+                                    registration and access control by mapping users to roles and geographic entities
+                                    (districts, areas, municipals, wards) stored in PostgreSQL tables (User,
+                                    UserDistrict, UserArea, UserTaluk, UserWard). Developed an interactive frontend form with
+                                    real-time validations and Spring Boot REST APIs for secure data
+                                    persistence and audit logging.</li>
+                                <li><strong>User Registration Form:</strong> Developed a reactive form using Angular’s
+                                    FormBuilder, capturing user & role details (firstName(employeeName), username, password, email,
+                                    mobileNumber, gender, roleId) and geo-mappings (districts, areas, municipals,
+                                    wards). Implemented client-side validations with Validators (e.g., required,
+                                    minLength(6), maxLength(20), regex for password complexity, 10-digit mobile number).
+                                    Integrated ng-multiselect-dropdown for multi-select geo-entity mappings, with
+                                    dynamic population based on selections (e.g., areas enabled after district
+                                    selection).</li>
+                                <li><strong>Geo-Based Access Control:</strong> Developed a hierarchical geo-mapping
+                                    system, allowing officers to be assigned to specific districts, areas, municipals,
+                                    and wards. Used ng-multiselect-dropdown with settings (e.g., allowSearchFilter,
+                                    selectAllText) to handle selections, dynamically fetching dependent data (e.g.,
+                                    municipals based on district and area) via API calls to EmployeeAddService. Backend
+                                    mapped selections to UserDistrict, UserArea, UserTaluk, and UserWard tables,
+                                    ensuring granular access control.</li>
+                                <li><strong>Role Assignment and RBAC Enforcement:</strong> Implemented role assignment
+                                    through a dropdown populated with roles from the getRoleListSelective API. Backend
+                                    saved roleId to the User table, enabling RBAC enforcement for module access (e.g.,
+                                    officer-specific permissions for approval workflows). Integrated with Spring
+                                    Security to enforce role-based access at the API level, ensuring secure endpoint
+                                    interactions.</li>
+                                <li><strong>Frontend Validation and User Experience:</strong> Enhanced form usability
+                                    with real-time feedback using RxJS observables, password toggle (show/hide with
+                                    icon-eye/icon-eye-off), and whitespace trimming on blur. Displayed contextual alerts
+                                    (success, processing, failure, validation, duplicate) using SweetAlert2 and
+                                    Angular’s *ngIf directives. Supported multilingual translations (English/Hindi) via
+                                    i18n, dynamically updating labels (e.g., municipal vs. block, ward vs. gram
+                                    panchayat) based on area type.</li>
+                                <li><strong>Dynamic Geo-Mapping Dependencies:</strong> Built cascading dropdowns for
+                                    geo-entities, where district selection enables area dropdown, area selection
+                                    populates municipals, and municipal selection fetches wards. Handled select/deselect
+                                    events (e.g., onSelectDistrict, onDeSelectMunicipal) to update dependent lists,
+                                    clearing lower-level selections when parent selections change (e.g., clearing wards
+                                    on municipal deselection). Optimized API calls to EmployeeAddService for
+                                    performance, using sessionStorage for language persistence.</li>
+                                <li><strong>Backend API Development:</strong> Designed a RESTful endpoint (/save) in
+                                    Spring Boot to handle user registration and geo-role mappings. Used @PostMapping
+                                    with @Valid and BindingResult for server-side validation, checking for duplicate
+                                    usernames and emails. Persisted user data to the User table and geo-mappings to
+                                    UserDistrict, UserArea, UserTaluk, and UserWard tables, with unique activation codes
+                                    generated via UUID.randomUUID().</li>
+                                <li><strong>Service Layer Implementation:</strong> Developed a service layer with
+                                    @Transactional annotations to ensure atomicity during user and geo-mapping saves.
+                                    Converted UserDto to User entity using a custom converter, setting fields like
+                                    status ("Active"), flowstatus ("1"), and activationCode. Saved audit records to
+                                    UserAudit table, capturing actiontype ("INSERT"), timestamps, and IP addresses for
+                                    compliance.</li>
+                                <li><strong>Audit and Logging Integration:</strong> Implemented comprehensive audit
+                                    logging via UserAudit and Remarks entities, capturing user creation details (e.g.,
+                                    userId, activationCode, createdBy) and geo-mapping actions. Integrated Log4j2 for
+                                    debugging and error handling, logging exceptions (e.g., duplicate username/email)
+                                    with detailed messages. Used Spring Actuator for endpoint health checks and metrics,
+                                    ensuring system reliability.</li>
+                                <li><strong>Validation and Error Handling:</strong> Integrated robust validation on both
+                                    frontend and backend. Frontend used Angular’s Validators for required fields,
+                                    pattern matching (e.g., password complexity, mobile number), and custom error
+                                    messages. Backend used Spring’s BindingResult to validate UserDto, returning
+                                    structured validation errors (e.g., username/email duplication) in ResponseBean
+                                    DTOs. Handled exceptions with try-catch blocks, returning HTTP 400 for bad requests.
+                                </li>
+                                <li><strong>Geo-Mapping Persistence:</strong> Persisted geo-mappings by iterating over
+                                    district, area, municipal, and ward selections in UserDto, saving each to respective
+                                    tables (UserDistrict, UserArea, UserTaluk, UserWard) with userId and createdDate.
+                                    Ensured data integrity with foreign key constraints and handled concurrent saves
+                                    with a 5-second delay for taluk mappings to avoid race conditions.</li>
+                                <li><strong>Module Leadership and Collaboration:</strong> Led a team of 8 developers in
+                                    delivering the RBAC module, coordinating frontend-backend integration via REST APIs.
+                                    Managed version control with Git (feature branches, pull requests) and Jenkins CI/CD
+                                    pipelines for seamless code reviews and deployments. Conducted regular client syncs
+                                    in Patna to align with project requirements.</li>
+                                <li><strong>Performance Optimization:</strong> Optimized frontend performance with lazy
+                                    loading for geo-entity dropdowns and backend performance with indexed columns on
+                                    User and geo-mapping tables. Reduced API call overhead by caching frequently
+                                    accessed data (e.g., district lists) and using Spring Data JPA query optimization
+                                    for efficient data retrieval.</li>
+                                <li><strong>Security Enhancements:</strong> Implemented secure password handling with
+                                    SHA-512 hashing (backend) and enforced strong password policies (uppercase,
+                                    lowercase, numbers, special characters). Integrated Spring Security for role-based
+                                    endpoint protection and session management, ensuring only authorized users access
+                                    sensitive APIs.</li>
+                                <li><strong>Module-Specific Enhancements:</strong> Handled dynamic label changes (e.g.,
+                                    municipal vs. block) based on area type (urban/rural), improving usability. Excluded
+                                    obsolete fields (e.g., lastName, dob) to streamline the form, reducing user input
+                                    time. Added accessibility features like ARIA labels and keyboard navigation for
+                                    inclusive design.</li>
+                            </ul>
+                        </figure>
+                    </li>
                 </ul>
             </section>
             <a href="projects.html" class="back-link">Back to Projects</a>
