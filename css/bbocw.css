@@ -273,3 +273,7 @@ main>h2 {
 .image-description.open {
     opacity: 1;
 }
+
+.contnet {
+    text-align: justify;
+}

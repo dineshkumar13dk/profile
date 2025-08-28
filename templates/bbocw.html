@@ -40,7 +40,7 @@
                     <li><strong>Period:</strong> January 2025 – Project Still Active </li>
                     <li><strong>Client Name:</strong> Government of Bihar</li>
                     <li><strong>Client Working Location:</strong> Patna, Bihar</li>
-                    <li><strong>Office Working Location:</strong> Eagle Tower, Thousand Lights</li>
+                    <li><strong>Office Working Location:</strong> Eagle Tower, Thousand Lights, Chennai</li>
                 </ul>
             </section>
             <section class="technologies-used">
@@ -60,11 +60,10 @@
                 <h3>Main Master Modules Worked:</h3>
                 <p><strong>Profile Update, Application Renewal(Direct Renewal), Application Rnewal with profile
                         update(Approval Process), Payment Gateway, RBAC(Role Based Access Control) - Geo x User x Role
-                        Mapping, Role x
-                        Module Mapping</strong></p>
+                        Mapping, Role x Menu Mapping Module</strong></p>
                 <h3>Super Admin Modules Worked:</h3>
                 <p><strong>Master Modules(Super Admin & UserEnd Website), CMS(Content Management System), DMS(Document
-                        Management System - File Upload), DB side: PK Id Mapping in Tables for Master
+                        Management System - File Upload),Chatbot(Website), DB side: PK Id Mapping in Tables for Master
                         Modules</strong></p>
             </section>
             <section class="responsibilities">
@@ -97,7 +96,7 @@
                             <figcaption class="dropdown-button-bbocw">
                                 <strong style="cursor: pointer;">Profile Update Module Explanation:</strong>
                             </figcaption>
-                            <ul class="image-description">
+                            <ul class="image-description contnet">
                                 <li><strong>Profile Update Module Development:</strong> Created a robust profile update
                                     system comprising to manage five PostgreSQL temporary tables,
                                     leveraging Angular 16 for dynamic frontend forms, client-side validation, and
@@ -291,7 +290,7 @@
                             <figcaption class="dropdown-button-bbocw">
                                 <strong style="cursor: pointer;">Application Renewal Module Explanation:</strong>
                             </figcaption>
-                            <ul class="image-description">
+                            <ul class="image-description contnet">
                                 <li><strong>Renewal Module Development (Dual Workflows):</strong> Structured a
                                     dual-workflow renewal system for worker registered application <strong>Direct
                                         Renewal</strong> (streamlined renewal without profile changes) and
@@ -434,7 +433,7 @@
                                 <strong style="cursor: pointer;">RBAC - Geo x User x Role Mapping Module
                                     Explanation:</strong>
                             </figcaption>
-                            <ul class="image-description">
+                            <ul class="image-description contnet">
                                 <li><strong>RBAC Module Development:</strong> Structured a Role-Based Access Control
                                     (RBAC) system with Geo x User x Role Mapping for the Bihar Building & Other
                                     Construction Workers Welfare Board (BBOCW) application. Enabled dynamic user
@@ -531,6 +530,93 @@
                             </ul>
                         </figure>
                     </li>
+                    <li>
+                        <figure>
+                            <figcaption class="dropdown-button-bbocw">
+                                <strong style="cursor: pointer;">Role x Menu Mapping Module Explanation:</strong>
+                            </figcaption>
+                            <ul class="image-description contnet">
+                                <li><strong>Role x Menu Mapping Module Development:</strong> Architected a Role x Menu
+                                    Mapping system for BBOCW application to assign specific menu and submenu access to
+                                    roles, enabling fine-grained access control. Managed data in PostgreSQL tables
+                                    (UserxModule, RoleMaster) and implemented a dynamic frontend interface and
+                                    Spring Boot REST APIs for secure persistence and retrieval, integrated with Spring
+                                    Security for role-based menu rendering.</li>
+                                <li><strong>Frontend Form Implementation:</strong> Developed a reactive form using
+                                    Angular’s FormBuilder, capturing role selection (roleId) and menu/submenu
+                                    assignments (moduleid, modulegroupid as FormArray). Utilized a scrollable card
+                                    layout with checkboxes for menu/submenu items, dynamically populated from the
+                                    RoleMaster table via API. Supported multilingual labels
+                                    (English/Hindi), with translations for module and submenu names based on
+                                    sessionStorage language settings.</li>
+                                <li><strong>Dynamic Menu and Submenu Rendering:</strong> Implemented a nested checkbox
+                                    structure for menu (RoleMaster.modulename) and submenu (RoleMaster.submenu) items.
+                                    Dynamically updated checkbox states based on existing
+                                    role mappings retrieved from API, using roleId as a query
+                                    parameter. Handled checkbox changes with Angular’s (change) binding, updating
+                                    FormArray (modulegroupid) for selected submenu IDs.</li>
+                                <li><strong>Role Selection and Pre-Population:</strong> Built a role dropdown,
+                                    dynamically filtering roles (e.g., ADMIN, DLC, LEO, LS,SUPPORT, SUPERADMIN).
+                                    On role selection (onClickUserGroup), fetched existing menu mappings and pre-checked
+                                    corresponding submenu checkboxes, ensuring accurate
+                                    visualization of current permissions. Cleared previous selections when a new role
+                                    was chosen to prevent stale data.</li>
+                                <li><strong>Frontend Validation and User Experience:</strong> Enforced required
+                                    validators for roleId and moduleid, displaying real-time error messages via *ngIf
+                                    directives. Enhanced UX with a 500px scrollable card for menu/submenu selection,
+                                    ARIA labels for accessibility, and reset/cancel buttons to clear selections.</li>
+                                <li><strong>Backend API Development:</strong> Designed a RESTful endpoints
+                                    to persist role-menu mappings in the UserxModule table. Used
+                                    @PostMapping with @Valid and BindingResult for server-side validation, ensuring
+                                    non-empty roleId and modulegroupid. Handled existing mappings by reactivating
+                                    inactive records (statusdelete="Active") and inserting new records for selected
+                                    submenu IDs, using @Transactional for atomicity.</li>
+                                <li><strong>Service Layer Implementation:</strong> Developed a service layer with
+                                    @Transactional annotations to manage UserxModule persistence. Checked for existing
+                                    mappings by roleId, reactivating inactive records or creating new ones for each
+                                    modulegroupid. Set fields like status ("Active"), statusdelete ("In Active"),
+                                    createdby, updatedby, and timestamps (LocalDateTime.now()) for audit compliance.
+                                </li>
+                                <li><strong>Menu and Submenu Data Retrieval:</strong> Implemented a service layer to
+                                    fetch menu and submenu data from RoleMaster, grouping submenus by modulename and
+                                    mapping to RoleMasterBean and RoleMasterDto for structured responses,
+                                    ensuring only authorized roles (e.g., ADMIN, SUPERADMIN) were available for mapping.
+                                </li>
+                                <li><strong>Audit and Logging Integration:</strong> Integrated audit logging via
+                                    UserxModule’s createdby, updatedby, createddate, and updateddate fields, capturing
+                                    IP addresses from HttpServletRequest. Used Log4j2 for debugging errors (e.g.,
+                                    validation failures) and Spring Actuator for endpoint health checks and metrics,
+                                    ensuring compliance with government audit requirements.</li>
+                                <li><strong>Validation and Error Handling:</strong> Implemented robust validation on
+                                    both frontend and backend. Frontend used Angular’s Validators for required fields,
+                                    with contextual error messages (e.g., “Role is Required”). Backend used
+                                    BindingResult to validate UserxModuleDto, returning structured error responses in
+                                    ResponseBean for invalid inputs. Handled exceptions with try-catch, returning HTTP
+                                    400 for bad requests.</li>
+                                <li><strong>Performance Optimization:</strong> Optimized frontend performance by
+                                    initializing checkbox states in ngOnInit and minimizing API calls through caching
+                                    RoleMaster data. Enhanced backend performance with indexed columns on UserxModule
+                                    and RoleMaster tables, and optimized JPA queries (e.g., findByRoleIdAndStatusdelete)
+                                    for efficient data retrieval.</li>
+                                <li><strong>Security Enhancements:</strong> Integrated Spring Security to restrict
+                                    /userxmodule/save and /rolemaster/list endpoints to authorized roles (e.g.,
+                                    SUPERADMIN). Ensured secure data transmission with JSON content-type headers and
+                                    validated user sessions via sessionStorage (user_id) for createdby/updatedby fields.
+                                </li>
+                                <li><strong>Module Leadership and Collaboration:</strong> Led a team of 8 developers in
+                                    delivering the Role x Menu Mapping module, coordinating frontend-backend integration
+                                    via REST APIs. Managed version control with Git (feature branches, pull requests)
+                                    and Jenkins CI/CD pipelines for seamless code reviews and deployments. Conducted
+                                    client syncs in Patna to align with project requirements.</li>
+                                <li><strong>Module-Specific Enhancements:</strong> Handled dynamic submenu checkbox
+                                    updates based on role selection, ensuring accurate pre-population of existing
+                                    mappings. Supported Hindi/English translations for module/submenu names, improving
+                                    usability for diverse users. Added accessibility features like ARIA labels and
+                                    keyboard navigation for inclusive design.</li>
+                            </ul>
+                        </figure>
+                    </li>
+
                 </ul>
             </section>
             <a href="projects.html" class="back-link">Back to Projects</a>
