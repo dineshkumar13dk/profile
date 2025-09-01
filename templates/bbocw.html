@@ -610,6 +610,153 @@
                             </ul>
                         </figure>
                     </li>
+                    <li>
+                        <figure>
+                            <figcaption class="dropdown-button-bbocw">
+                                <strong style="cursor: pointer;">CMS - Directory Module Explanation (Super Admin
+                                    Side):</strong>
+                            </figcaption>
+                            <ul class="image-description">
+                                <li><strong>CMS - Directory Module Development:</strong> Architected a Directory
+                                    Management module for the BBOCW Application. For CMS enabling Super Admins to manage
+                                    directory entries (e.g., division, district, designation, contact details).</li>
+                                <li><strong>Frontend Form Implementation:</strong> Developed reactive forms using
+                                    Angular’s FormBuilder for creating (`directoryForm`) and updating
+                                    (`directoryFormUpdate`) directory entries. Included fields for divisionId,
+                                    districtId, designation: DLC, ALC, LS, LEO with multilingual labels
+                                    (English/Hindi) based on translations stored in sessionStorage.</li>
+                                <li><strong>Form Validation and UX:</strong> Implemented client-side validation with
+                                    Angular Validators (required, email, pattern for 10-digit contactNo). Displayed
+                                    real-time error messages using *ngIf directives. Enhanced UX with SweetAlert2 for
+                                    confirmation dialogs, a card-based layout with Bootstrap, and a cancel button to
+                                    reset forms and toggle views. Added accessibility with ARIA labels and keyboard
+                                    navigation.</li>
+                                <li><strong>Dynamic Data Population:</strong> Fetched division and district lists via
+                                    REST APIs, populating dropdowns with *ngFor and conditional language rendering
+                                    (divisionNameEn/Hi, districtNameEn/Hi). Filtered districts by divisionId in the
+                                    user-side frontend, ensuring dynamic updates on division selection using
+                                    `onDivisionChange()`.</li>
+                                <li><strong>Directory Listing and Pagination:</strong> Built a responsive table using
+                                    Bootstrap to display directory entries (`directoryList`).
+                                    Integrated `ngx-pagination` for client-side pagination with
+                                    configurable page sizes (5, 10, 15, 20, 50, 100) and search functionality via
+                                    `onsearch()` and `/directory/activeList/search/pagination/filter` API.</li>
+                                <li><strong>Backend API Development:</strong> Designed RESTful endpoints in Spring Boot,
+                                    including for creating entries, updates, for soft deletes (setting statusDelete="In
+                                    Active"). Used `@Valid` and `BindingResult` for server-side validation, returning
+                                    structured errors in `ResponseBean` for invalid inputs.</li>
+                                <li><strong>Service Layer and Data Persistence:</strong> Implemented service layer
+                                    with `@Transactional` for atomic operations. Persisted data
+                                    in the `Directory` table, mapping fields like divisionId, districtId. Used
+                                    `DirectoryDtoToDirectory` and `DirectoryToDirectoryDto` converters for DTO-entity
+                                    mapping, ensuring clean data transfer.</li>
+                                <li><strong>Database Integration:</strong> Leveraged JPA repositories
+                                    (`DirectoryRepository`, `DistrictRepository`, `DivisionRepository`) for efficient
+                                    data retrieval. Optimized queries with `@Query` for searching (e.g., `search` and
+                                    `searchCount` for full-text search across fields) and filtering by status ("Active")
+                                    and statusDelete ("In Active"). Indexed columns (id, status) for performance.</li>
+                                <li><strong>Audit and Logging:</strong> Integrated audit logging with fields like
+                                    createdBy (from sessionStorage user_id), updatedBy, createdDate, and updatedDate
+                                    (LocalDateTime.now()). Used Log4j2 for error logging (e.g., "Directory Details Save"
+                                    exceptions) and Spring Actuator for endpoint monitoring, ensuring compliance with
+                                    government audit standards.</li>
+                                <li><strong>Security Enhancements:</strong> Secured endpoints with Spring Security
+                                    to SUPERADMIN roles. Ensured secure data transmission with JSON headers and
+                                    validated user sessions via sessionStorage. Masked email addresses in the user-side
+                                    frontend (replacing "@" with "[at]" and "." with "[dot]").</li>
+                                <li><strong>Performance Optimization:</strong> Optimized frontend performance by caching
+                                    division and district lists in `ngOnInit` and minimizing API calls. Improved backend
+                                    performance with indexed queries and pagination (`PageRequest` with
+                                    `Sort.by("id").descending()`). Used `HttpParams` for efficient query parameter
+                                    handling in Angular HTTP requests.</li>
+                                <li><strong>Module-Specific Enhancements:</strong> Supported dynamic district filtering
+                                    by divisionId on the user side, improving usability. Implemented soft delete
+                                    functionality (statusDelete="In Active") for data recovery. Added multilingual error
+                                    messages and confirmation dialogs, ensuring a seamless experience for Hindi/English
+                                    users.</li>
+                            </ul>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <figcaption class="dropdown-button-bbocw">
+                                <strong style="cursor: pointer;">CMS - Directory Module Explanation (User
+                                    Side):</strong>
+                            </figcaption>
+                            <ul class="image-description">
+                                <li><strong>CMS - Directory Module (User Side) Overview:</strong> Developed a
+                                    public-facing Directory Module for the BBOCW application, allowing users to view and
+                                    filter directory entries (e.g., division, district, designation, contact details).
+                                    Built with Angular for a responsive frontend and Spring Boot REST APIs for secure
+                                    data retrieval from PostgreSQL, ensuring accessibility and user-friendly navigation.
+                                </li>
+                                <li><strong>Search and Filter Functionality:</strong> Implemented a search bar and
+                                    filter dropdowns (division, district, designation) using Angular’s `[(ngModel)]` for
+                                    two-way binding. The search bar (`searchValue`) triggered `onSearch()` to filter
+                                    entries by `directoryname`, while dropdowns (`division`, `district`, `designation`)
+                                    triggered `onFilter()` and `onDivisionChange()` to dynamically update results via
+                                    endpoint. District dropdown was dynamically filtered by selected `divisionId`,
+                                    ensuring relevant options.</li>
+                                <li><strong>Dynamic Dropdown Population:</strong> Populated division and district
+                                    dropdowns by fetching all active directory entries (`fetchData(true)`) with a large
+                                    page size (1000) to cache data in `allData`. Extracted unique `divisionId` and
+                                    `districtId` values to populate `divisions` and `districts` arrays, sorted by name
+                                    (English/Hindi) using `localeCompare`. Updated district options on division
+                                    selection via `onDivisionChange()`, filtering `districts` based on `divisionId`
+                                    matches in `allData`.</li>
+                                <li><strong>Pagination and Page Size Control:</strong> Integrated `ngx-pagination` for
+                                    client-side pagination, supporting configurable page sizes (5, 10, 15, 20, 50, 100)
+                                    via a dropdown (`pageSize`). Handled page changes with `onTableDataChange($event)`,
+                                    updating the `page` variable and triggering `fetchData()` with `HttpParams` for
+                                    pagination (`pageNo`, `pageSize`). Displayed total records (`count`) and navigation
+                                    controls with translated labels (e.g., "Previous", "Next").</li>
+                                <li><strong>Email Masking:</strong> Implemented `maskEmail()` to obscure
+                                    email addresses in the table, replacing "@" with "[at]" and "." with "[dot]" (e.g.,
+                                    "user@example.com" becomes "user[at]example[dot]com"). Ensured "N/A" was displayed
+                                    for null or empty emails.</li>
+                                <li><strong>Backend API Support:</strong> Utilized the endpoint to fetch active
+                                    directory
+                                    entries, supporting query parameters (`directoryname`, `division`, `district`,
+                                    `designation`, `pageNo`, `pageSize`). The endpoint filtered results by
+                                    `status="Active"` and validated page sizes (5, 10, 15, ..., 100). Used
+                                    `DirectoryServiceImpl` to process requests, combining search terms and filters with
+                                    JPA queries for efficient data retrieval.</li>
+                                <li><strong>Dynamic Filtering Logic:</strong> Handled dynamic filtering,
+                                    validating inputs (`divisionId`, `districtId`, `designation`) and building a
+                                    combined search term. Filtered districts by `divisionId` using ByDivisionId,
+                                    ensuring only relevant districts were returned. Supported designation filtering
+                                    (DLC, ALC, LS, LEO) with case-insensitive validation via `isValidDesignation()`.
+                                </li>
+                                <li><strong>Performance Optimization:</strong> Optimized frontend performance by caching
+                                    all directory entries in `ngOnInit` to minimize API calls for dropdown population.
+                                    Used `HttpParams` for efficient query parameter passing. On the backend,
+                                    leveraged indexed columns (`status`, `id`) and `PageRequest` with
+                                    `Sort.by("id").descending()` for fast data retrieval. Ensured minimal data transfer
+                                    by returning `DirectoryDto` objects.</li>
+                                <li><strong>Multilingual Support and UX:</strong> Supported English and Hindi
+                                    translations via `LanguageEnglish` and `LanguageHindi` objects, toggled based on
+                                    `sessionStorage.getItem('selectedLanguage')`. Enhanced UX with a clean, responsive
+                                    layout using Bootstrap, a centered heading, and a divider for visual appeal. Added a
+                                    refresh button (`onRefresh()`) to reload the page and reset filters.</li>
+                                <li><strong>Security and Data Integrity:</strong> Ensured secure data retrieval with
+                                    Spring Security, restricting the endpoint to authenticated users. Validated query
+                                    parameters (e.g., `divisionId`, `districtId`) to prevent invalid requests, throwing
+                                    `RuntimeException` for bad inputs. Used `DirectoryToDirectoryDto` converter to
+                                    ensure consistent data mapping.
+                                </li>
+                                <li><strong>Database Integration:</strong> Leveraged JPA
+                                    queries, filtering by `status="Active"` and `statusDelete="In Active"`. Used
+                                    `searchNew` and `searchCountNew` methods for full-text search across fields
+                                    and optimized pagination with `PageRequest`.
+                                    Ensured data consistency with `@Transactional` for read operations.</li>
+                                <li><strong>Module-Specific Enhancements:</strong> Implemented dynamic district
+                                    filtering by `divisionId` to streamline user interaction. Ensured only active
+                                    directory entries were displayed, with robust error handling for empty results (`No
+                                    Data` message). Added accessibility features like ARIA labels and keyboard
+                                    navigation for inclusive design.</li>
+                            </ul>
+                        </figure>
+                    </li>
                 </ul>
             </section>
             <a href="projects.html" class="back-link">Back to Projects</a>

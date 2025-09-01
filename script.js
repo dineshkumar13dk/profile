@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const lastUpdatedElement = document.getElementById("last-updated-time");
   const lastActiveElement = document.getElementById("last-updated-time2");
 
-  const manualDate = "August 18, 2025";
+  const manualDate = "September 1, 2025";
   const manualTime = "10:00 AM";
 
   if (lastUpdatedElement) lastUpdatedElement.textContent = manualDate;
