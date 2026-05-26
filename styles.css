@@ -131,7 +131,7 @@ img {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
     gap: 2rem;
-    align-items: center;
+    align-items: start;
 }
 
 .hero-copy {
