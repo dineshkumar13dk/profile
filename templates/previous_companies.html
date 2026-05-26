@@ -1,76 +1,56 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Previously Worked Companies</title>
-    <link rel="stylesheet" href="../css/previous-companies.css">
+    <title>Previous Companies</title>
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
-<body>
-    <div class="container">
-        <aside class="sidebar">
-            <div class="logo">
-                <h1>Dashboard</h1>
+<body class="app-shell">
+    <header class="app-header">
+        <div class="brand">
+            <span class="brand-tag">Eagle Software</span>
+            <h1 class="brand-title">Previous Companies</h1>
+        </div>
+        <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="app-nav" id="appNav">
+            <a href="../index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="page-main companies-page">
+        <section class="section-card">
+            <span class="eyebrow">Experience</span>
+            <h2>Company work across development and testing</h2>
+            <p>These career entries show deep involvement in quality, delivery, and product interfaces for enterprise and civic systems.</p>
+        </section>
+        <section class="section-card projects-panel">
+            <div class="project-grid">
+                <article class="project-card">
+                    <h3>MphasiS The Next Applied</h3>
+                    <p>Worked across backend API delivery, QA automation, and product proof-of-concept systems.</p>
+                </article>
+                <article class="project-card">
+                    <h3>Eagle Software India Private Limited</h3>
+                    <p>Delivered government portals for BBOCW and TNCSC with responsive design, secure form flows, and data persistence.</p>
+                </article>
+                <article class="project-card">
+                    <h3>Nandha Engineering College</h3>
+                    <p>Academic project work, research papers, and app concepts such as Smart Travellers.</p>
+                </article>
             </div>
-            <ul class="nav-links">
-                <li><a href="../index.html"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="projects.html"><i class="fas fa-briefcase"></i>Projects</a></li>
-                <li><a href="about.html"><i class="fas fa-user"></i>About</a></li>
-                <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
-            </ul>
-            <div class="last-updated">
-                <p>Last Updated: <span id="last-updated-time"></span></p>
-                <div class="last-updated">
-                    <p>Last Active: <span id="last-updated-time2"></span></p>
-                </div>
-            </div>
-        </aside>
+        </section>
+    </main>
 
-        <main class="main-content">
-            <section id="previous-companies">
-                <div class="section-header">
-                    <a href="../index.html" class="back-link">Back to Home</a>
-                    <h2 class="section-title">Previously Worked Companies</h2>
-                </div>
-                <div class="company-list">
-
-                    <div class="company">
-                        <h3><a href="https://www.mphasis.com/home/corporate/about-mphasis.html" class="company-link"
-                                target="_blank">
-                                Mphasis Private Limited</a></h3>
-                        <p><strong>Role:</strong> Associate Software Engineer</p>
-                        <p><strong>Period of year:</strong> April 2023 - December 2024 </p>
-                        <p><strong>Years of Experience:</strong> 1 Years 9 Months</p>
-                    </div>
-
-                    <div class="company">
-                        <h3><a href="https://www.eaglesoftware.in/aboutus.html" class="company-link"
-                                target="_blank">Eagle Software
-                                Private Limited</a></h3>
-                        <p><strong>Role:</strong> Software Developer</p>
-                        <p><strong>Period of year:</strong> January 2025 - At Present</p>
-                        <p><strong>Years of Experience:</strong> Currently Working</p>
-                    </div>
-
-                    <div class="company">
-                        <h3><a class="company-link">Company 3</a></h3>
-                        <p><strong>Role:</strong> N/A</p>
-                        <p><strong>Years of Experience:</strong> N/A</p>
-                    </div>
-
-                    <div class="company">
-                        <h3><a class="company-link">Company 4</a></h3>
-                        <p><strong>Role:</strong> N/A</p>
-                        <p><strong>Years of Experience:</strong> N/A</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
-
+    <footer class="app-footer">Consistent page layout across all portfolio pages.</footer>
     <script src="../script.js"></script>
 </body>
 

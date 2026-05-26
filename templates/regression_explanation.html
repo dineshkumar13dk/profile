@@ -1,85 +1,65 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regression Testing Application</title>
-    <link rel="stylesheet" href="../css/regression.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
- 
-<body> 
-    <div class="container">
-        <aside class="sidebar">
-            <div class="logo">
-                <h1>Dashboard</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../index"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="projects"><i class="fas fa-briefcase"></i>Projects</a></li>
-                <li><a href="about"><i class="fas fa-user"></i>About</a></li>
-                <li><a href="contact"><i class="fas fa-envelope"></i>Contact</a></li>
-            </ul>
-            <div class="last-updated">
-                <p>Last Updated: <span id="last-updated-time"></span></p>
-                <div class="last-updated">
-                    <p>Last Active: <span id="last-updated-time2"></span></p>
+
+<body class="app-shell">
+    <header class="app-header">
+        <div class="brand">
+            <span class="brand-tag">Regression Testing</span>
+            <h1 class="brand-title">Regression Testing Tool</h1>
+        </div>
+        <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="app-nav" id="appNav">
+            <a href="../index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="page-main detail-page">
+        <section class="section-card detail-panel">
+            <span class="eyebrow">Project Detail</span>
+            <h2>Regression Testing Application</h2>
+            <p>This tool supports data retrieval, file tracking, and automated regression test flow for client delivery in an enterprise environment.</p>
+            <div class="detail-grid">
+                <div class="detail-section">
+                    <h3>Role</h3>
+                    <p>Full Stack Developer</p>
                 </div>
-            </div>    
-        </aside>
+                <div class="detail-section">
+                    <h3>Client</h3>
+                    <p>FEDEX / DLF Chennai</p>
+                </div>
+                <div class="detail-section">
+                    <h3>Period</h3>
+                    <p>March 2024 – July 2024</p>
+                </div>
+            </div>
+        </section>
+        <section class="section-card detail-panel">
+            <h3>Key Features</h3>
+            <ul>
+                <li>Managed regression file access with fast search, copy and retrieval flows.</li>
+                <li>Built secure session handling, routing unauthorized users to sign-in pages.</li>
+                <li>Automated data processing for primary/secondary entities to maintain database accuracy.</li>
+                <li>Delivered Excel export reporting with formatting and color-coded results.</li>
+                <li>Integrated user feedback and logging for file operations and processing steps.</li>
+            </ul>
+        </section>
+    </main>
 
-        <main>
-            <h2>REGRESSION TESTING TOOL</h2>
-            <a href="projects.html" class="back-link">Back to Projects</a>
-            <section class="application-info">
-                <h3>Application Details</h3>
-                <ul>
-                    <li><strong>Application:</strong> Regression Testing Application</li>
-                    <li><strong>Operating System:</strong> Windows 10</li>
-                    <li><strong>Period:</strong> March 2024 – July 2024</li>
-                    <li><strong>Client Name:</strong> FEDEX</li>
-                    <li><strong>Location:</strong> DLF Chennai</li>
-                </ul>
-            </section>
-            <section class="technologies-used">
-                <h3>Technologies Used</h3>
-                <ul>
-                    <li><strong>Front End:</strong> HTML, CSS</li>
-                    <li><strong>Server Side:</strong> Spring Boot, Spring Data JPA</li>
-                    <li><strong>Backend:</strong> Java, JavaScript, SQL (MySQL, Oracle), Hibernate</li>
-                    <li><strong>Server:</strong> Apache Tomcat</li>
-                </ul>
-            </section>
-            <section class="role">
-                <h3>Role</h3>
-                <p><strong>Full Stack Developer</strong></p>
-            </section>
-            <section class="responsibilities">
-                <h3>Responsibilities</h3>
-                <ul>
-                    <li>Developed a web application for managing regression testing files using Java for the backend and
-                        HTML, CSS, and JavaScript for the frontend.</li>
-                    <li>Implemented features to copy, retrieve, and track important regression testing files, ensuring
-                        easy access for users.</li>
-                    <li>Built functionality to process data from primary and secondary entities, ensuring accurate
-                        updates and inserts in the database.</li>
-                    <li>Managed user sessions to ensure secure access, redirecting unauthenticated users to the sign-in
-                        page for a personalized experience.</li>
-                    <li>Automated routine tasks, such as data insertion and file processing, to enhance application
-                        efficiency.</li>
-                    <li>Developed endpoints for quick access to datasets, allowing users to easily retrieve relevant
-                        information.</li>
-                    <li>Created methods to export data to Excel, applying formatting and color coding for clarity on
-                        test results.</li>
-                    <li>Integrated logging and feedback mechanisms to keep users informed about file operations and data
-                        processing activities.</li>
-                </ul>
-            </section>
-            <a href="projects.html" class="back-link">Back to Projects</a>
-        </main>
-
-        <script src="../script.js"></script>
+    <footer class="app-footer">A clean project detail page with responsive structure and shared styling.</footer>
+    <script src="../script.js"></script>
 </body>
 
 </html>

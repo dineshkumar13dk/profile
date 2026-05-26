@@ -1,92 +1,76 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
-    <link rel="stylesheet" href="../css/project.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
-<body>
-    <div class="container">
-        <aside class="sidebar">
-            <div class="logo">
-                <h1>Dashboard</h1>
+<body class="app-shell">
+    <header class="app-header">
+        <div class="brand">
+            <span class="brand-tag">Eagle Software</span>
+            <h1 class="brand-title">Projects</h1>
+        </div>
+        <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="app-nav" id="appNav">
+            <a href="../index.html">Home</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="page-main projects-page">
+        <section class="section-card">
+            <span class="eyebrow">Projects Overview</span>
+            <h2>Work highlights and product delivery</h2>
+            <p>These projects demonstrate a combination of academic work, enterprise systems, and government portal delivery. The Eagle Software work is designed to be clear, responsive, and action-focused.</p>
+        </section>
+
+        <section class="section-card projects-panel">
+            <div class="project-grid">
+                <article class="project-card">
+                    <h3><a href="sta_explanation.html">SMART TRAVELLERS APP</a></h3>
+                    <p><strong>Year:</strong> 2021 - 2022</p>
+                    <p><strong>College:</strong> Nandha Engineering College</p>
+                    <p><strong>Paper Published:</strong> <a href="https://ijsart.com/smart-travelers-app-using-flutter-52296" target="_blank">IJSART</a></p>
+                </article>
+                <article class="project-card">
+                    <h3><a href="regression_explanation.html">REGRESSION TESTING TOOL</a></h3>
+                    <p><strong>Year:</strong> 2023 - 2024</p>
+                    <p><strong>Company:</strong> MphasiS The Next Applied</p>
+                    <p><strong>Role:</strong> Full Stack Developer</p>
+                </article>
+                <article class="project-card">
+                    <h3><a href="chatbot_explanation.html">CHATBOT</a></h3>
+                    <p><strong>Year:</strong> 2023 - 2024</p>
+                    <p><strong>Company:</strong> MphasiS The Next Applied</p>
+                    <p><strong>Role:</strong> Full Stack Developer</p>
+                    <p><strong>Demo Code:</strong> <a href="https://github.com/dineshkumar13dk/chatbot/tree/development" target="_blank">GitHub</a></p>
+                </article>
+                <article class="project-card">
+                    <h3><a href="bbocw.html">BBOCW — Bihar Building & Other Construction Workers Welfare Board</a></h3>
+                    <p><strong>Year:</strong> 2025 - Present</p>
+                    <p><strong>Company:</strong> Eagle Software India Private Limited</p>
+                    <p><strong>Role:</strong> Full Stack Developer</p>
+                </article>
+                <article class="project-card">
+                    <h3><a href="tncsc.html">TNCSC — Tamil Nadu Civil Supplies Corporation</a></h3>
+                    <p><strong>Year:</strong> 2025 - Present</p>
+                    <p><strong>Company:</strong> Eagle Software India Private Limited</p>
+                    <p><strong>Role:</strong> Full Stack Developer</p>
+                </article>
             </div>
-            <ul class="nav-links">
-                <li><a href="../index.html"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="projects.html"><i class="fas fa-briefcase"></i>Projects</a></li>
-                <li><a href="about.html"><i class="fas fa-user"></i>About</a></li>
-                <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
-            </ul>
-            <div class="last-updated">
-                <p>Last Updated: <span id="last-updated-time"></span></p>
-                <div class="last-updated">
-                    <p>Last Active: <span id="last-updated-time2"></span></p>
-                </div>
-            </div>
-        </aside>
+        </section>
+    </main>
 
-        <main class="main-content">
-            <section class="projects">
-                <h2>Skills & Expertise</h2>
-                <p>
-                    Core Java, Spring Boot, Spring Framework, Spring MVC, J2EE, RDMS Management, MYSQL, ORACLE DB,
-                    POSTGRES, HTML, CSS, JavaScript, Angular, Rest API, Rest
-                    Webservice, Hibernate, JPA, Apache Tomcat, Git deployment
-                </p>
-                <h2>Projects</h2>
-                <div class="project">
-                    <h3><a href="sta_explanation.html">SMART TRAVELLERS APP 👈</a></h3>
-                    <p>
-                        <strong>Year:</strong> 2021 - 2022<br>
-                        <strong>College:</strong> Nandha Engineering College<br>
-                        <strong>Paper Published Link: </strong> <a
-                            href="https://ijsart.com/smart-travelers-app-using-flutter-52296" target="_blank">IJSART</a>
-                    </p>
-                </div>
-                <div class="project">
-                    <h3><a href="regression_explanation.html">REGRESSION TESTING TOOL 👈</a></h3>
-                    <p>
-                        <strong>Year:</strong> 2023 - 2024<br>
-                        <strong>Company:</strong> MphasiS The Next Applied<br>
-                        <strong>Role:</strong> Full Stack Developer<br>
-                    </p>
-                </div>
-                <div class="project">
-                    <h3><a href="chatbot_explanation.html">CHATBOT 👈</a></h3>
-                    <p>
-                        <strong>Year:</strong> 2023 - 2024<br>
-                        <strong>Company:</strong> MphasiS The Next Applied<br>
-                        <strong>Role:</strong> Full Stack Developer<br>
-                        <strong>SAMPLE DEMO CODE: </strong> <a
-                            href="https://github.com/dineshkumar13dk/chatbot/tree/development"
-                            target="_blank">CHATBOT</a>
-                    </p>
-                </div>
-                <div class="project">
-                    <h3><a href="bbocw.html">BBOCW(Bihar Building & Other Construction Workers Welfare Board) 👈</a>
-                    </h3>
-                    <p>
-                        <strong>Year:</strong> 2025 - Present<br>
-                        <strong>Company:</strong> Eagle Software India Private Limited<br>
-                        <strong>Role:</strong> Full Stack Developer<br>
-                    </p>
-                </div>
-                <div class="project">
-                    <h3><a href="">TNCSC(Tamil Nadu Civil Supplies Corporation) 👈</a></h3>
-                    <p>
-                        <strong>Year:</strong> 2025 - Present<br>
-                        <strong>Company:</strong> Eagle Software India Private Limited<br>
-                        <strong>Role:</strong> Full Stack Developer<br>
-                    </p>
-            </section>
-        </main>
-
-    </div>
-
+    <footer class="app-footer">Responsive project content, clear hierarchy, and fast mobile navigation.</footer>
     <script src="../script.js"></script>
 </body>
 
