@@ -429,7 +429,20 @@ img {
 .image-container {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* Ensure headings and key labels use the teal accent for clear two-color theme */
+.brand-title,
+.section-card h2,
+.project-card h3,
+.detail-section h3 {
+    color: var(--accent-text);
+}
+
+/* Links should adopt the teal accent for consistency */
+a {
+    color: var(--accent-text);
 }
 
 figure {
