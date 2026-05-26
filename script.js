@@ -116,4 +116,21 @@
       }
     });
   });
+
+  // Map link toggles for location labels on homepage
+  const mapDisplay = document.getElementById('mapLinkDisplay');
+  document.querySelectorAll('.show-map-btn').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const href = btn.getAttribute('data-href');
+      if (!mapDisplay) return;
+      if (mapDisplay.textContent === href) {
+        mapDisplay.style.display = 'none';
+        mapDisplay.textContent = '';
+      } else {
+        mapDisplay.style.display = 'block';
+        mapDisplay.textContent = href;
+      }
+    });
+  });
 });

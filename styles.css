@@ -4,6 +4,7 @@
     --surface-soft: #f5fffe;
     --accent: #4ed4c6;
     --accent-soft: #baf4ee;
+    --accent-text: #0b6b63;
     --text: #0d2636;
     --muted: #4b5e6c;
     --border: rgba(78, 212, 198, 0.22);
@@ -74,7 +75,7 @@ img {
     font-size: 0.78rem;
     letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--accent-text);
     font-weight: 700;
 }
 
@@ -148,9 +149,10 @@ img {
 }
 
 .hero-copy h1 {
-    font-size: clamp(2.5rem, 4vw, 3.4rem);
+    font-size: clamp(2.2rem, 4vw, 3rem);
     line-height: 1.04;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--accent-text);
 }
 
 .hero-copy p {
@@ -194,13 +196,12 @@ img {
 
 .hero-card {
     display: grid;
-    gap: 1.25rem;
-    background: rgba(186, 244, 238, 0.92);
-    border: 1px solid rgba(78, 212, 198, 0.25);
-    border-radius: 28px;
-    padding: 2rem;
-    box-shadow: 0 25px 55px rgba(78, 212, 198, 0.15);
-    animation: floatIn 0.9s ease 0.2s both;
+    gap: 1rem;
+    background: var(--surface);
+    border: 1px solid rgba(14,50,74,0.04);
+    border-radius: 18px;
+    padding: 1.25rem;
+    box-shadow: 0 12px 30px rgba(14, 50, 74, 0.06);
 }
 
 .profile-avatar {
@@ -208,7 +209,7 @@ img {
     aspect-ratio: 1 / 1;
     border-radius: 32px;
     overflow: hidden;
-    border: 5px solid rgba(78, 212, 198, 0.35);
+    border: 4px solid rgba(78, 212, 198, 0.28);
     background: linear-gradient(180deg, #fff, #e7fdf6);
     margin: 0 auto;
 }
@@ -257,10 +258,35 @@ img {
     justify-content: center;
     padding: 0.6rem 1rem;
     border-radius: 999px;
-    background: var(--accent);
+    background: var(--accent-soft);
     color: #fff;
     font-weight: 700;
     width: fit-content;
+}
+
+.location-labels {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.show-map-btn {
+    background: transparent;
+    border: 1px solid rgba(14,50,74,0.06);
+    padding: 0.4rem 0.6rem;
+    border-radius: 12px;
+    font-weight: 700;
+    color: var(--accent-text);
+    cursor: pointer;
+}
+
+.map-link {
+    display: none;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+    word-break: break-word;
 }
 
 .section-card {
