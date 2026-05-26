@@ -103,4 +103,17 @@
   };
 
   calculateExperience();
+
+  // Make project cards navigate when clicked (except when inner links are clicked)
+  document.querySelectorAll('.project-card').forEach((card) => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+      // if the click originated from an anchor, let it handle navigation
+      if (e.target.closest('a')) return;
+      const link = card.querySelector('a.project-link');
+      if (link) {
+        window.location.href = link.getAttribute('href');
+      }
+    });
+  });
 });

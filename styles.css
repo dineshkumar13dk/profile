@@ -361,6 +361,20 @@ img {
     margin: 0.65rem 0;
 }
 
+.click-hint {
+    margin-top: 0.25rem;
+}
+
+.click-hint a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.click-hint a:hover {
+    text-decoration: underline;
+}
+
 .detail-grid {
     display: grid;
     gap: 1rem;
